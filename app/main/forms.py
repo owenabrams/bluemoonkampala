@@ -44,8 +44,8 @@ def yesnochoicequery():
 
 class EditAIDatasetForm(FlaskForm): 
 
-    patientplaceofmedicalservice = QuerySelectField(query_factory=patientplaceofmedicalservicechoicequery, allow_blank=True)
-    typeofnearesthealthcenter = QuerySelectField(query_factory=yesnochoicequery, allow_blank=True)
+    # patientplaceofmedicalservice = QuerySelectField(query_factory=patientplaceofmedicalservicechoicequery, allow_blank=True)
+    # typeofnearesthealthcenter = QuerySelectField(query_factory=yesnochoicequery, allow_blank=True)
     address = SelectField("Nearest health center", choices=[('C','Closer to urban area'),('F','Further from urban area')], coerce=str) 
     famsize = SelectField("Family Size", choices=[("LE3","less or equal to 3 "),("GT3","Greater than 3 ")], coerce=str) 
     pstatus = SelectField("Parents cohabitation status", choices=[('T','Living together'),('A','Living apart')], coerce=str) 
