@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+ 
+ <!-- -->
+ 
+ <div class="row">
+        <div class="col-md-12 title">
+            <h3>Patients</h3>
+        </div>
+
+    </div>
+
+    <div class="form-group pull-right">
+            <input type="text" class="search form-control" placeholder="What you looking for?">
+        </div>
+        <span class="counter pull-right"></span>
+        <table class="table table-hover table-bordered results">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th class="col-md-5 col-xs-5">Name / Surname</th>
+              <th class="col-md-4 col-xs-4">Lat</th>
+              <th class="col-md-3 col-xs-3">Lon</th>
+              <th class="col-md-3 col-xs-3">Delete</th>
+            </tr>
+            <tr class="warning no-result">
+              <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <th class="td-name" scope="row">{{ user.id }}</th>
+                
+              <td class="td-name">
+                    {% set user_link %}
+                    <span class="user_popup">
+                    <a class="user_popup" href="{{ url_for('main.user', username=user.username) }}">{{ user.username }}</a>
+                    </span>
+                    {% endset %}
+                    {{ user_link }}
+                    <br /><small>~ Pajule</small>  
+              </td>
+              <td>{{ user.lat }}</td>
+              <td>{{ user.lon }}</td>
+              <td><a class="user_popup" href="{{ url_for('main.deleteuser', username=user.username) }}">Delete {{ user.username }}</a></td>
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+
+{% endblock %}
+

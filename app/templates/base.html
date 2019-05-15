@@ -1,0 +1,739 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+{{super()}}
+<meta charset="utf-8" />
+
+<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='img/apple-icon.png') }}">
+
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!-- CSS Files -->
+            
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/material-kit.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/userinfocardstyle.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/purecss/style.css') }}">
+
+
+
+        <!-- <style> body {background-color: #ffe72c} </style> -->
+        <script src="{{url_for('static', filename='js/main_part.js')}}"></script>
+        <script src="{{url_for('static', filename='js/convert.js')}}"></script>
+        <script src="{{url_for('static', filename='js/bootstraptablesearch/index.js')}}"></script>
+    
+{% endblock %}
+
+{% block title %}
+    {% if title %}{{ title }} ~blueMOONAPP{% else %}{{ _('Welcome to ~blueMOONAPP') }}{% endif %}
+{% endblock %}
+
+
+
+{% block navbar %}
+    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" id="sectionsNav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="img-responsive">
+                <a class="img" href="{{ url_for('main.index') }}"><img class="img profile-photo-small" src="{{ url_for('static', filename = 'img/brand_blue2.png') }}" alt="greyAPP" /></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                
+                <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_anonymous %}
+                    <li><a href="{{ url_for('auth.login') }}">{{ _('Login') }}</a></li>
+                    {% else %}
+                   
+                    <li><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></li>
+                    
+                    <li>
+                            <a href="{{ url_for('main.messages') }}">{{ _('Msg') }}
+                                    {% set new_messages = current_user.new_messages() %}
+                                    <span id="message_count" class="badge"
+                                          style="visibility: {% if new_messages %}visible
+                                                             {% else %}hidden{% endif %};">
+                                        {{ new_messages }}
+                                    </span>
+                                </a>
+                    </li>
+
+                    <li>
+                        <button class="btn btn-info btn-raised btn-fab btn-fab-mini" data-toggle="modal" data-target="#myModal">
+                            <!-- <i class="material-icons">library_books</i> -->
+                            Converters
+                        </button>
+                    </li>
+                   <li>
+                        <button class="btn btn-rose btn-raised btn-fab btn-fab-mini" data-toggle="modal" data-target="#noticeModal">
+                            <!-- <i class="material-icons">notifications</i> -->
+                            BMI
+                        </button>
+                   </li>
+
+
+
+                    {% endif %}
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
+                    <li><a href="{{ url_for('main.explore') }}">{{ _('Explore') }}</a></li>
+                    {% if g.search_form %}
+                    <form class="navbar-form navbar-left" role="search" method="get" action="{{ url_for('main.search') }}">
+                        <div class="form-group form-white">
+                            {{ g.search_form.q(size=20, class='form-control', placeholder=g.search_form.q.label.text) }}
+                        </div>
+                    </form>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+<body class="presentation-page">
+    <div class="page-header header-filter clear-filter color-overlay" data-parallax="true" style="background-image: url_for('static', filename='img/faces/mainavatar.jpg');">
+        <div class="">
+                {% if current_user.is_authenticated %}
+                {% with tasks = current_user.get_tasks_in_progress() %}
+                {% if tasks %}
+                    {% for task in tasks %}
+                    <div class="alert alert-success" role="alert">
+                        {{ task.description }}
+                        <span id="{{ task.id }}-progress">{{ task.get_progress() }}</span>%
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+                {% endif %}
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-info" role="alert">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+        
+                {# application content needs to be provided in the app_content block #}
+        </div>
+    </div>
+
+
+    <div class="main main-raised">
+            <div class="section">
+    <div class="container">
+
+        {% block app_content %}{% endblock %}
+    </div>
+
+    
+
+
+    </div><!-- Close section -->
+    </div><!-- Close main main- raised -->
+
+    <footer class="footer footer-white">
+            <div class="container">
+                <!--
+                <a class="footer-brand" href="http://www.time.io">_greyAPP//</a>
+                -->
+                <ul class="pull-center">
+                    <li class="footer-grey">
+                        &nbsp;&nbsp;<img class="" src="{{ url_for('static', filename = 'img/tap.png') }}" alt="mamafitnessAPP" >
+                    </li>
+                    <li>
+                        <a href="#">
+                            @bmk | #bmk | bmk
+                        </a>
+                    </li>
+                    <li>
+                        <img class="" src="{{ url_for('static', filename = 'img/brand_white_total.png') }}" alt="mamafitnessAPP" > &nbsp;&nbsp;
+                    </li>
+                    
+                </ul>
+                
+                <ul class="social-buttons pull-right">
+                    
+                        <a class="footer-brand" href="http://www.cypher.io">~bluemoonAPP//</a>
+    
+                    
+                    <!--
+                    <li>
+                        <a href="https://www.facebook.com/hupcod" target="_blank" class="btn btn-just-icon btn-simple btn-dribbble">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/hupcod" target="_blank" class="btn btn-just-icon btn-simple btn-instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li> -->
+                </ul>
+                 
+            </div>
+        </footer>
+    
+
+        
+
+    	<!-- notice modal -->
+<div class="modal fade" id="noticegameplanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-notice" >
+	  <div class="modal-content" style="background-image: url({{ url_for('static', filename='img/442618small.jpg') }})">
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+		  <h5 class="modal-title" id="myModalLabel">Game Plan</h5>
+		</div>
+		<div class="modal-body">
+		  <div class="instruction">
+			  <div class="row">
+				  <div class="col-md-8">
+					   <strong>Walk: Create</strong>
+					   <p>Run an awareness campaign, Establish a tone and appearance, Develop creative content, Establish online audiences & communities</p>
+				  </div>
+				  <div class="col-md-4">
+					  <div class="picture">
+                            <img class="img-rounded img-responsive" src="{{ url_for('static', filename = 'img/dg1.jpg') }}" alt="mamafitnessAPP" >
+						  
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  <div class="instruction">
+			  <div class="row">
+				  <div class="col-md-8">
+						  <strong>Jog: Engage</strong>
+						  <p>Position the Mama Fitness brand, Build credibility & state authority, Engage communities, Create content</p>
+				  </div>
+				  <div class="col-md-4">
+					  <div class="picture">
+                          <img class="img-rounded img-responsive" src="{{ url_for('static', filename = 'img/dg2.jpg') }}" alt="mamafitnessAPP" >
+						  
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  <strong>Run: Activate</strong>
+		  <p>Engage the audience, Roll out creative campaigns, Online activations, Create content</p>
+		</div>
+		<div class="modal-footer text-center">
+			  <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Sounds good!</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- end notice modal -->    
+
+
+
+            <!-- Classic Modal -->
+    <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <i class="material-icons">clear</i>
+                        </button>
+                        <h4 class="modal-title">Convert</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p> <!-- Body mass index (BMI) is a measure of body fat based on your
+                                weight in relation to your height, and applies to most adult
+                                 men and women aged 20 and over. For children aged 2and over
+                                 , BMI percentile is the best assessment of body fat. -->
+                                <table>
+                                    <tr>
+                                        
+    
+                                        <div class="col-md-3 ">
+                                            <div class="form-group label-floating has-success">
+                                                <label class="control-label">feet</label>
+                                                <input type="text" id=height_feet class="form-control text-whyte">
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-md-3 ">
+                                            <div class="form-group label-floating has-success">
+                                                <label class="control-label">inches</label>
+                                                <input type="text" id=height_inches class="form-control text-whyte">
+                                            </div>
+                                        </div>
+    
+    
+                                        <div class="col-md-3 ">
+                                            <div class="form-group has has-success">
+                                                <label class="control-label">cm</label>
+                                                <input type="text" id=centimeter class="form-control text-whyte">&nbsp; cm
+                                            </div>
+                                        </div>
+    
+                                        <!-- 
+                                        <input type="text" size="1" maxlength="3" id="height_feet" style="margin-left:0px;margin-top:28px;">feet
+                                        <input type="text" size="1" maxlength="3" id="height_inches" style="margin-left:0px;">inches
+                                        <b>=</b>
+                                        <input type="text" size="3" maxlength="4" id="centimeter" style="margin-left:0px;">cm -->
+                                    </tr>
+                                    <br>
+                                    <button type="button" class="btn btn-info btn-xs" onclick="one()">Convert</button>
+                                    <button type="button" class="btn btn-info btn-xs" onclick="clear1()">Reset</button>
+                                    <br />
+                                    <br />
+                                    <br />
+                
+                                </table>
+                                <table>
+                                    <tr>
+                                        <div class="col-md-3 ">
+                                            <div class="form-group has has-success">
+                                                <label class="control-label">&nbsp;</label>
+                                                &nbsp; &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 ">
+                                            <div class="form-group label-floating has-success">
+                                                <label class="control-label">lb</label>
+                                                <input type="text" id=pound class="form-control text-whyte">
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-md-3 ">
+                                            <div class="form-group has-success">
+                                                <label class="control-label">kg</label>
+                                                <input type="text" id=kilogram class="form-control text-whyte">&nbsp; kg
+                                            </div>
+                                        </div>
+                                        
+                                    </tr>
+                                    <br>
+                                    <button type="button" class="btn btn-info btn-xs" onclick="two()">Convert</button>
+                                    <button type="button" class="btn btn-info btn-xs" onclick="clear2()">Reset</button>
+                
+                                </table>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-simple">Nice Button</button> -->
+                        <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+                    </div>
+                    <!-- -->
+                </div>
+            </div>
+        </div>
+        <!--  End Modal -->
+        
+        <!-- notice modal -->
+        <div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-notice">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                <h5 class="modal-title" id="myModalLabel"><span style=" color: #ffffff;">Calculate BMI</span></h5>
+              </div>
+              <div class="modal-body">
+                <div class="instruction">
+                    <div class="row">
+                        <div class="col-md-12">
+                             
+    
+    
+                             <div class="row clearfix" id="main&calculator">
+                                    <form name="form1">
+                                    <!--                 inputs -->
+                                    <div id="inputs">
+                                            
+                                            <div class="row">
+                                                <div class="col-md-3 ">
+                                                    <div class="form-group label-floating has-success">
+                                                        <label class="control-label">Height</label>
+                                                        <input type="text" name=height class="form-control text-whyte">
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="col-md-3 ">
+                                                    <div class="form-group label-floating has-success">
+                                                        <label class="control-label">Weight</label>
+                                                        <input type="text" name=weight class="form-control text-whyte">
+                                                    </div>
+                                                </div>
+    
+                                                <div class="col-md-3 ">
+                                                    <select class="selectpicker" name=sex data-style="select-with-transition" title="" data-size="7">
+                                                        <option value="0" class="text-whyte" selected>Male</option>
+                                                        <option value="1"><span style="color: white;">Female</span></option>
+                                                    </select>
+                                                </div>
+    
+                                                <br>
+                                                <input class="btn btn-info btn-xs" onclick=lookme(this.form) type=button value=submit name=button style="margin-left:50px;">
+                                                <input class="btn btn-info btn-xs" onclick=ClearForm() type=reset value="  reset  " name=reset style="margin-left:30px;">
+                        
+    
+                                            </div>
+                                        </div>
+                            <!--                 end inputs -->
+                                    </form>    
+                                    </div>        
+    
+    
+    
+    
+    
+                             <!-- End main & inches to cm convert caculator-->
+    
+                        </div>
+                        <!-- 
+                        <div class="col-md-4">
+                            <div class="picture">
+                                <img src="../static/img/dg1.png" alt="Thumbnail Image"  class="img-rounded img-responsive">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="instruction">
+                    <div class="row">
+                        <div class="col-md-12">
+                                <h5 class="modal-title" id="myModalLabel"><span style=" color: #ffffff;">Result</span></h5> 
+                                <!--result display               author: Tangqi Feng -->
+                                <div class="row clearfix" id="result">
+                                    <table class="col-md-12 column" >
+                                        <form name="form2">
+    
+                                                    <tr>
+                                                        <td class="control-label" >
+                                                            <span style=" color: #B2FF41">Ideal weight (kg)：</span>
+                                                            <input onfocus=blur() size=4 name="legendweight" style="border:0; color: #ffffff; background:none;">
+                                                            <span style=" color: #B2FF41">~</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="control-label">
+                                                            <span style=" color: #B2FF41; font-weight:400;">BMI (21-22 is the best)：</span>
+                                                            <input onfocus=blur() size=3 name="bmi" style="border:0; color: #ffffff; background:none;">&nbsp;&nbsp;&nbsp;
+                                                            <span style=" color: #B2FF41">~</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><P>&nbsp;</P></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="control-label" align=center colspan="2">
+                                                            <span style=" color: #ffffff;">~
+                                                            <textarea onfocus=blur() name=nowstat cols=40 style="border:0; color: #B2FF41; background:none;"></textarea></span>
+                                                        </td>
+                                                    </tr>
+    
+                                        </form>
+                                    </table>
+                                </div>
+                        </div>
+                        <!-- 
+                        <div class="col-md-4">
+                            <div class="picture">
+                                <img src="../static/img/dg2.jpg" alt="Thumbnail Image"  class="img-rounded img-responsive">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+              </div>
+              <!-- 
+              <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Sounds good!</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- end notice modal -->
+        
+        <!-- small modal -->
+        <div class="modal fade" id="smallAlertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-small ">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+              </div>
+              <div class="modal-body text-center">
+                <h5>Are you sure you want to do this? </h5>
+    
+                ...
+                
+              </div>
+              <div class="modal-footer text-center">
+                <button type="button" class="btn btn-simple" data-dismiss="modal">Never mind</button>
+                <button type="button" class="btn btn-success btn-simple">Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--    end small modal -->
+        
+        <!-- Login Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-login">
+                <div class="modal-content">
+                    <div class="card card-signup card-plain">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+        
+                            <div class="header header-primary text-center">
+                                <h4 class="card-title">Log in</h4>
+                                <div class="social-line">
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form" method="" action="">
+                                <p class="description text-center">Or Be Classical</p>
+                                <div class="card-content">
+        
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">face</i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="First Name...">
+                                    </div>
+        
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">email</i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Email...">
+                                    </div>
+        
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <input type="password" placeholder="Password..." class="form-control" />
+                                    </div>
+        
+                                    <!-- If you want to add a checkbox to this form, uncomment this code
+        
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes" checked>
+                                            Subscribe to newsletter
+                                        </label>
+                                    </div> -->
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <a href="#pablo" class="btn btn-primary btn-simple btn-wd btn-lg">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  End Modal -->
+        
+        <!-- Register Modal -->
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-signup">
+                <div class="modal-content">
+                    <div class="card card-signup card-plain">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                            <h2 class="modal-title card-title text-center" id="myModalLabel">Register</h2>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                                    ...
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  End Modal -->
+
+
+</body>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
+        
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/material.min.js') }}"></script>
+
+    
+    <!--    Plugin for Date Time Picker and Full Calendar Plugin   -->
+    <script src="{{ url_for('static', filename = 'js/moment.min.js') }}"></script>
+
+
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/   -->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/nouislider.min.js') }}"></script>
+
+
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker   -->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap-datetimepicker.js') }}"></script>
+
+
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select   -->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap-selectpicker.js') }}"></script>
+
+
+    <!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/   -->
+    <script src="{{ url_for('static', filename = 'js/bootstrap-tagsinput.js') }}"></script>
+
+
+    <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput   -->
+    <script src="{{ url_for('static', filename = 'js/jasny-bootstrap.min.js') }}"></script>
+
+
+    <!--    Plugin For Google Maps   -->
+    <!-- <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+
+
+    <!--    Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc    -->
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/material-kit.js') }}" ver="1.2.1"></script>
+    
+    <!-- Bootstrap Search -->
+    <script>
+    
+$(document).ready(function() {
+    $(".search").keyup(function () {
+        var searchTerm = $(".search").val();
+        var listItem = $('.results tbody').children('tr');
+        var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+
+    $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
+        return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+      }
+    });
+
+    $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function(e){
+      $(this).attr('visible','false');
+    });
+
+    $(".results tbody tr:containsi('" + searchSplit + "')").each(function(e){
+      $(this).attr('visible','true');
+    });
+
+    var jobCount = $('.results tbody tr[visible="true"]').length;
+      $('.counter').text(jobCount + ' item');
+
+    if(jobCount == '0') {$('.no-result').show();}
+      else {$('.no-result').hide();}
+        });
+});
+
+    </script>
+
+    <script>
+        function translate(sourceElem, destElem, sourceLang, destLang) {
+            $(destElem).html('<img src="{{ url_for('static', filename='loading.gif') }}">');
+            $.post('/translate', {
+                text: $(sourceElem).text(),
+                source_language: sourceLang,
+                dest_language: destLang
+            }).done(function(response) {
+                $(destElem).text(response['text'])
+            }).fail(function() {
+                $(destElem).text("{{ _('Error: Could not contact server.') }}");
+            });
+        }
+        $(function () {
+            var timer = null;
+            var xhr = null;
+            $('.user_popup').hover(
+                function(event) {
+                    // mouse in event handler
+                    var elem = $(event.currentTarget);
+                    timer = setTimeout(function() {
+                        timer = null;
+                        xhr = $.ajax(
+                            '/user/' + elem.first().text().trim() + '/popup').done(
+                                function(data) {
+                                    xhr = null;
+                                    elem.popover({
+                                        trigger: 'manual',
+                                        html: true,
+                                        animation: false,
+                                        container: elem,
+                                        content: data
+                                    }).popover('show');
+                                    flask_moment_render_all();
+                                }
+                            );
+                    }, 1000);
+                },
+                function(event) {
+                    // mouse out event handler
+                    var elem = $(event.currentTarget);
+                    if (timer) {
+                        clearTimeout(timer);
+                        timer = null;
+                    }
+                    else if (xhr) {
+                        xhr.abort();
+                        xhr = null;
+                    }
+                    else {
+                        elem.popover('destroy');
+                    }
+                }
+            );
+        });
+        function set_message_count(n) {
+            $('#message_count').text(n);
+            $('#message_count').css('visibility', n ? 'visible' : 'hidden');
+        }
+        function set_task_progress(task_id, progress) {
+            $('#' + task_id + '-progress').text(progress);
+        }
+        {% if current_user.is_authenticated %}
+        $(function() {
+            var since = 0;
+            setInterval(function() {
+                $.ajax('{{ url_for('main.notifications') }}?since=' + since).done(
+                    function(notifications) {
+                        for (var i = 0; i < notifications.length; i++) {
+                            switch (notifications[i].name) {
+                                case 'unread_message_count':
+                                    set_message_count(notifications[i].data);
+                                    break;
+                                case 'task_progress':
+                                    set_task_progress(notifications[i].data.task_id,
+                                        notifications[i].data.progress);
+                                    break;
+                            }
+                            since = notifications[i].timestamp;
+                        }
+                    }
+                );
+            }, 10000);
+        });
+        {% endif %}
+    </script>
+
+
+
+
+{% endblock %}

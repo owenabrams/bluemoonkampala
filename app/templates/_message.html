@@ -1,0 +1,69 @@
+<div class="col-md-6 col-lg-4">
+<div class="rotating-card-container manual-flip">
+        <div class="card card-rotate">
+
+<div class="front">
+        <div class="card-content content-info">
+            <h5 class="category-social">
+                 {{ _('%(username)s', username=post.author.username) }}
+            </h5>
+            <h4 class="card-title">
+                <p>&nbsp;</p>
+            </h4>
+            <h1 class="card-title">
+                <p>&nbsp;</p>
+            </h1>
+            <p class="card-description">
+                    {{ _('%(when)s', when=moment(post.timestamp).fromNow()) }}
+            </p>
+            <div class="footer text-center">
+                <button type="button" name="button" class="btn btn-white btn-fill btn-round btn-rotate">
+                    Read Msg
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="card-content content-plain">
+            
+            
+
+        <div class="media">
+            <a class="pull-left" href="{{ url_for('main.user', username=post.author.username) }}">
+                <div class="avatar img-raised">
+                    <img class="media-object" src="{{ post.author.avatar(36) }}" alt="..."/>
+                    {% set user_link %}
+                        <span class="user_popup">
+                        <a href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.username }}</a>
+                        </span>
+                    {% endset %}
+                </div>
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{ _('%(username)s <small>&middot; %(when)s',
+                    username=user_link, when=moment(post.timestamp).fromNow()) }}
+                </small></h4>
+            </div>
+            
+        </div>
+        <div class="media">
+            <div class="media-body">
+                <p>{{ post.body }}</p>
+                <p><a href="{{ url_for('main.send_message', recipient=post.author.username) }}">{{ _('Send Reply') }}</a></p>
+            </div>
+        </div>
+            <div class="footer text-center">
+                <button type="button" name="button" class="btn btn-white btn-round btn-rotate">
+                    Back...
+                </button>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    </div>
+</div>
+</div>

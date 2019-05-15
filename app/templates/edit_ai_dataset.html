@@ -1,0 +1,378 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+    <form class="contact-form" action="" method="post">
+            {{ form.hidden_tag() }}
+
+
+
+<!--                 inputs -->
+        <div id="inputs">
+            
+
+            <div class="row">
+
+                <div class="title">
+                    <h3>Edit Dataset</h3>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Place of medical service</label>
+                        {{ form.patientplaceofmedicalservice(cols=32, class="form-control") }}<br />
+                        {% for error in form.patientplaceofmedicalservice.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Nearest health center(Grade)</label>
+                        {{ form.typeofnearesthealthcenter(cols=32, class="btn btn-primary btn-round") }}<br />
+                        {% for error in form.typeofnearesthealthcenter.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Address ['C' – closer to] or ['F' – further from]</label>
+                        {{ form.address(cols=32, class="btn btn-primary btn-round") }}<br />
+                        {% for error in form.address.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Family size</label>
+                        {{ form.famsize(cols=32, class="btn btn-primary btn-round") }}<br />
+                        {% for error in form.famsize.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Parents cohabitation status</label>
+                        {{ form.pstatus(cols=32, class="btn btn-primary btn-round") }}<br />
+                        {% for error in form.pstatus.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Mother's education level</label>
+                        {{ form.medu(cols=32, class="btn btn-primary btn-round") }}<br />
+                        {% for error in form.medu.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Father's education level</label>
+                        {{ form.fedu(cols=32, class="btn btn-primary btn-round") }}<br />
+                        {% for error in form.fedu.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Mother's health</label>
+                        {{ form.mhealth(cols=32, class="btn btn-primary btn-round") }}<br />
+                        {% for error in form.mhealth.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Father's health</label>
+                        {{ form.fhealth(cols=32, class="btn btn-primary btn-round") }}
+                        {% for error in form.fhealth.errors %}<br />
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Mother's job</label>
+                        {{ form.mjob(cols=32, class="btn btn-primary btn-round") }}
+                        {% for error in form.mjob.errors %}<br />
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Father's job</label>
+                        {{ form.fjob(cols=32, class="btn btn-primary btn-round") }}
+                        {% for error in form.fjob.errors %}<br />
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">group</i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="With Material Icons">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-group"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="With Font Awesome Icons">
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--                 end inputs -->
+
+        <div class="space-70"></div>
+
+<!--                 textarea/checkbox/radio/toggle -->
+        <div id="checkRadios">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="title">
+                        <h3>Checkboxes</h3>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsCheckboxes">
+                            Unchecked
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsCheckboxes" checked>
+                            Checked
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsCheckboxes" disabled>
+                            Disabled Unchecked
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsCheckboxes" disabled checked>
+                            Disabled Checked
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="title">
+                        <h3>Radio Buttons</h3>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios">
+                            Radio is off
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" checked="true">
+                            Radio is on
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadiosDisabled" disabled>
+                            Disabled Radio is off
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadiosDisabled" checked="true" disabled>
+                            Disabled Radio is on
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="title">
+                        <h3>Toggle Buttons</h3>
+                    </div>
+
+                    <div class="togglebutton">
+                        <label>
+                            <input type="checkbox" checked="">
+                            Toggle is on
+                        </label>
+                    </div>
+
+                    <div class="togglebutton">
+                        <label>
+                            <input type="checkbox">
+                            Toggle is off
+                        </label>
+                    </div>
+
+                    <div class="togglebutton">
+                        <label>
+                                {{ form.malnutritiontreatment() }} {{ form.malnutritiontreatment.label }} 
+                            
+                        </label>
+                    </div> 
+                </div>
+
+            </div>
+        </div>
+<!-- 				end textarea -->
+
+        <div class="space-70"></div>
+
+<!--                 select -->
+        <div class="select">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="title">
+                        <h3>Customizable Select</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-sm-3">
+                            <select class="selectpicker" data-style="btn btn-primary btn-round" title="Single Select" data-size="7">
+                                <option disabled selected>Choose city</option>
+                                <option value="2">Foobar</option>
+                                <option value="3">Is great</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-5 col-md-6 col-sm-3">
+                            <select class="selectpicker" data-style="select-with-transition" multiple title="Choose City" data-size="7">
+                                <option disabled> Choose city</option>
+                                <option value="2">Paris </option>
+                                <option value="3">Bucharest</option>
+                                <option value="4">Rome</option>
+                                <option value="5">New York</option>
+                                <option value="6">Miami </option>
+                                <option value="7">Piatra Neamt</option>
+                                <option value="8">Paris </option>
+                                <option value="9">Bucharest</option>
+                                <option value="10">Rome</option>
+                                <option value="11">New York</option>
+                                <option value="12">Miami </option>
+                                <option value="13">Piatra Neamt</option>
+                                <option value="14">Paris </option>
+                                <option value="15">Bucharest</option>
+                                <option value="16">Rome</option>
+                                <option value="17">New York</option>
+                                <option value="18">Miami </option>
+                                <option value="19">Piatra Neamt</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="title">
+                        <h3>Dropdown & Dropup</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="dropdown">
+                              <button href="#pablo" class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Dropdown <b class="caret"></b></button>
+                              <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-header">Dropdown header</li>
+                                <li><a href="#pablo">Action</a></li>
+                                <li><a href="#pablo">Another action</a></li>
+                                <li><a href="#pablo">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#pablo">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#pablo">One more separated link</a></li>
+                              </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6">
+                            <div class="dropup">
+                              <button href="#pablo" class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Dropup <b class="caret"></b></button>
+                              <ul class="dropdown-menu dropdown-menu-left">
+                                <li class="dropdown-header">Dropdown header</li>
+                                <li><a href="#pablo">Action</a></li>
+                                <li><a href="#pablo">Another action</a></li>
+                                <li><a href="#pablo">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#pablo">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#pablo">One more separated link</a></li>
+                              </ul>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--                 end select -->
+
+        <div class="space-70"></div>
+
+<!--				 textarea/tags -->
+
+        <div id="textareaTags">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="title">
+                        <h3>Textarea</h3>
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">Notes</label>
+                        {{ form.aidatasetnotes(rows=4, class="form-control") }}
+                        {% for error in form.aidatasetnotes.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="title">
+                        <h3>Tags</h3>
+                    </div>
+                    <input type="text" value="Amsterdam,Washington,Sydney,Beijing" class="tagsinput" data-role="tagsinput" data-color="rose"/>
+
+                    <!-- You can change data-color="rose" with one of our colors primary | warning | info | danger | success -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                {{ form.submit(class="btn btn-primary btn-simple btn-wd btn-lg") }}
+            </div>
+        </div>
+
+    </form>
+
+
+{% endblock %}

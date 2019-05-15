@@ -1,0 +1,116 @@
+2019-04-12 02:35:06,124 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 02:40:11,309 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 02:44:21,039 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 02:44:26,833 ERROR: Exception on /auth/login [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Projects\mamafitness\app\auth\routes.py", line 28, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\mamafitness\app\templates\baseparallax.html", line 15, in template
+    src: url({{ url_for('static', filename='fonts/sequel-pro-webfont.woff') format('woff') }}  ) ;
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "C:\Projects\mamafitness\app\templates\auth\login.html", line 1, in top-level template code
+    {% extends 'baseparallax.html' %}
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\mamafitness\app\templates\baseparallax.html", line 15, in template
+    src: url({{ url_for('static', filename='fonts/sequel-pro-webfont.woff') format('woff') }}  ) ;
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 876, in subparse
+    self.stream.expect('variable_end')
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'format'
+2019-04-12 02:45:43,520 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 02:49:23,319 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:00:56,621 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:02:11,680 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:05:47,885 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:07:06,248 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:08:58,317 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:13:35,251 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:16:16,985 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:20:52,521 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:22:33,428 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:32:34,249 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:33:35,292 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:35:24,976 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 07:57:08,929 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 07:59:37,173 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:04:37,000 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:05:04,380 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:09:14,306 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:19:21,295 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:27:04,913 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:28:22,573 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:29:56,103 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:31:50,850 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:36:14,878 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:37:56,164 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:42:51,541 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:44:08,577 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:45:34,559 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:46:57,929 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:48:40,016 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:51:02,301 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:54:43,788 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:55:52,208 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:01:33,823 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:03:08,459 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:06:42,659 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:09:40,427 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:56:53,476 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:04:16,426 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:05:09,223 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:10:24,339 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:18:50,379 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:20:32,069 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:21:07,825 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:23:52,851 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:27:12,548 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:28:37,294 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:30:56,591 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:38:21,070 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:43:50,093 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:45:43,614 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:49:59,646 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:51:01,371 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:52:40,364 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:58:51,967 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:03:21,949 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:15:02,546 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:16:42,027 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:17:29,746 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:23:55,087 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:27:32,022 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:29:05,244 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:30:16,150 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]

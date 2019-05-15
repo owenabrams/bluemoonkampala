@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>greyAPP Map</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet/leaflet.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet/screen.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet/MarkerCluster.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet/MarkerCluster.Default.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet/leaflet-search.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet/L.Control.Locate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet/styles.css') }}">
+    
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="{{ url_for('static', filename = 'js/leaflet/leaflet.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/leaflet/leaflet.markercluster.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/leaflet/leaflet-search.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/leaflet/leaflet.smoothmarkerbouncing.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/leaflet/L.Control.Locate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/leaflet/Control.FullScreen.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/leaflet/jquery.min.js') }}"></script>
+
+
+
+</head>
+<body>
+<div id="map"></div>
+
+<script src="{{ url_for('static', filename = 'js/leaflet/app.js') }}"></script>
+</body>
+</html>

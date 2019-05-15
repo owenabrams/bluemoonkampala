@@ -1,0 +1,128 @@
+2019-04-12 11:30:42,433 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:37:55,935 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:43:51,887 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 15:20:59,822 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 15:23:03,747 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 15:25:24,448 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 08:01:23,331 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 17:37:24,631 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 17:46:06,426 ERROR: Exception on /export_posts [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3443, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Projects\mamafitness\app\main\routes.py", line 365, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "C:\Projects\mamafitness\app\models.py", line 152, in launch_task
+    *args, **kwargs)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 316, in enqueue
+    job_id=job_id, at_front=at_front, meta=meta)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 263, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 341, in enqueue_job
+    pipe.execute()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3458, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+2019-04-16 18:09:54,686 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 18:20:39,643 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 18:21:27,702 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 18:29:41,082 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 19:12:03,027 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 19:18:15,955 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 19:20:12,448 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:07:23,848 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:13:31,015 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:15:26,061 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:24:06,192 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:32:20,966 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:36:17,602 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:40:22,982 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:42:47,711 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:45:28,834 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:51:21,285 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:55:26,127 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:00:58,615 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:06:01,862 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:06:42,878 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:07:50,627 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:08:35,205 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:11:41,601 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:13:31,454 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:14:59,313 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:17:40,062 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:21:31,816 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:22:51,902 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:25:21,427 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:57:06,563 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:59:51,389 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:03:47,852 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:08:28,284 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:12:30,525 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:13:40,760 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:22:51,612 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:24:08,314 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 20:33:26,404 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-18 21:50:52,266 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-05-07 12:36:48,198 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 12:44:30,708 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:06:51,101 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:10:52,641 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:15:05,400 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:24:29,757 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:32:16,632 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:39:06,914 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:50:23,190 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:54:44,921 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]

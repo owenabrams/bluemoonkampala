@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+ 
+ <!-- -->
+ 
+ <div class="row">
+        <div class="col-md-12 title">
+            <h3>AI Datasets</h3>
+        </div>
+
+    </div>
+
+    <div class="form-group pull-right">
+            <input type="text" class="search form-control" placeholder="What you looking for?">
+        </div>
+        <span class="counter pull-right"></span>
+        <table class="table table-hover table-bordered results">
+          <thead>
+            <tr>
+              <th>Case Name</th>
+              <th class="col-md-5 col-xs-5">Famsize</th>
+              <th class="col-md-5 col-xs-5">Pstatus</th>
+              <th class="col-md-4 col-xs-4">Medu</th>
+              <th class="col-md-3 col-xs-3">Fedu</th>
+              <th class="col-md-3 col-xs-3">Duration</th>
+            </tr>
+            <tr class="warning no-result">
+              <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <th class="td-name" scope="row">{{ user.username }}</th>
+                
+              <td class="td-name">
+                    {% set user_link %}
+                    <span class="user_popup">
+                    <a class="user_popup" href="#">{{ user.pstatus }}</a>
+                    </span>
+                    {% endset %}
+                    {{ user_link }}
+                    <br /><small>~ Support {{ user.patientplaceofmedicalservice }}</small>  
+              </td>
+              <td>{{ user.medu }}</td>
+              <td>{{ user.fedu }}</td>
+              <td>{{ user.durationofseizure }}</td>
+              <td><a class="user_popup" href="#">~ {{ user.famed }}</a></td>
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+
+{% endblock %}
+

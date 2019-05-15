@@ -1,0 +1,87 @@
+2019-05-07 14:01:21,528 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:02:42,608 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:11:59,002 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:14:41,804 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:17:15,136 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:27:19,115 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:28:05,404 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:30:50,711 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:33:22,772 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:42:24,124 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:49:24,877 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 15:27:41,862 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 15:30:38,881 ERROR: Exception on /export_posts [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3443, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Projects\bluemoon\app\main\routes.py", line 365, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "C:\Projects\bluemoon\app\models.py", line 152, in launch_task
+    *args, **kwargs)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 316, in enqueue
+    job_id=job_id, at_front=at_front, meta=meta)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 263, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 341, in enqueue_job
+    pipe.execute()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3458, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+2019-05-08 10:14:33,589 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-09 18:48:46,747 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-09 18:59:48,578 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-09 19:00:45,442 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-15 16:56:43,105 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
