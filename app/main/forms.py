@@ -4,7 +4,7 @@ from wtforms import StringField, BooleanField, RadioField, SubmitField, RadioFie
 from wtforms.validators import ValidationError, DataRequired, Length
 from flask_babel import _, lazy_gettext as _l
 from app.models import User, patientplaceofmedicalservicechoice, yesnochoice
-from wtforms_sqlalchemy.fields import QuerySelectField
+#from wtforms_sqlalchemy.fields import QuerySelectField
 
 
 class EditProfileForm(FlaskForm):
