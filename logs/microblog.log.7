@@ -1,13 +1,7 @@
-2019-02-26 18:01:30,004 ERROR: Exception on /notifications [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
-    context)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such column: user.casedefinition_name
-
-The above exception was the direct cause of the following exception:
-
+2019-04-12 02:35:06,124 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 02:40:11,309 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 02:44:21,039 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 02:44:26,833 ERROR: Exception on /auth/login [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,69 +11,106 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\projects\njohnson\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Projects\njohnson\app\main\routes.py", line 16, in before_request
-    if current_user.is_authenticated:
-  File "c:\projects\njohnson\virtual\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\projects\njohnson\virtual\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 302, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\login_manager.py", line 317, in _load_user
-    return self.reload_user()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\login_manager.py", line 279, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Projects\njohnson\app\models.py", line 247, in load_user
-    return User.query.get(int(id))
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 864, in get
-    return self._get_impl(ident, loading.load_on_ident)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 897, in _get_impl
-    return fallback_fn(self, key)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\loading.py", line 223, in load_on_ident
-    return q.one()
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2814, in one
-    ret = self.one_or_none()
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2784, in one_or_none
-    ret = list(self)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2855, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2878, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
-    return meth(self, multiparams, params)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
-    context)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
-    exc_info
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Projects\mamafitness\app\auth\routes.py", line 28, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
-    context)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.casedefinition_name [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen, user.last_message_read_time AS user_last_message_read_time, user.picture AS user_picture, user.color AS user_color, user.sex AS user_sex, user.age AS user_age, user.dob AS user_dob, user.pob AS user_pob, user.weight AS user_weight, user.height AS user_height, user.village AS user_village, user.parish AS user_parish, user.subcounty AS user_subcounty, user.lon AS user_lon, user.lat AS user_lat, user.casedefinition_name AS user_casedefinition_name, user.casedefinition_characteristics AS user_casedefinition_characteristics, user.dateofonset AS user_dateofonset, user.ageofonset AS user_ageofonset, user."where" AS user_where, user.veryfirstsignssymptoms AS user_veryfirstsignssymptoms, user.guardian_father AS user_guardian_father, user.guardian_mother AS user_guardian_mother, user.guardian_other AS user_guardian_other, user.telephone1 AS user_telephone1, user.telephone2 AS user_telephone2, user.nameofidpcamp AS user_nameofidpcamp, user.yearsspentinidpcamp AS user_yearsspentinidpcamp, user.watersourceduringonset AS user_watersourceduringonset, user.numberofsiblings AS user_numberofsiblings, user.numberofsiblingswithnodding AS user_numberofsiblingswithnodding, user.numberofsiblingsalive AS user_numberofsiblingsalive, user.numberofsiblingswithepilepsy AS user_numberofsiblingswithepilepsy, user.noddingrelateddeathsinfam AS user_noddingrelateddeathsinfam, user.patientplaceofmedicalservice AS user_patientplaceofmedicalservice, user.typeofnearesthealthcenter AS user_typeofnearesthealthcenter, user.address AS user_address, user.famsize AS user_famsize, user.pstatus AS user_pstatus, user.medu AS user_medu, user.fedu AS user_fedu, user.mhealth AS user_mhealth, user.fhealth AS user_fhealth, user.mjob AS user_mjob, user.fjob AS user_fjob, user.reason AS user_reason, user.guardian AS user_guardian, user.traveltime AS user_traveltime, user.nursevisittime AS user_nursevisittime, user.mealsdaily AS user_mealsdaily, user.malnutritiontreatment AS user_malnutritiontreatment, user.siblingswithrelatedsickness AS user_siblingswithrelatedsickness, user.seizurespermonth AS user_seizurespermonth, user.durationofseizure AS user_durationofseizure, user.activitylevel AS user_activitylevel, user.behavioralproblems AS user_behavioralproblems, user.triggers AS user_triggers, user.screeningfailed AS user_screeningfailed, user.extranutritionalsupport AS user_extranutritionalsupport, user.famed AS user_famed, user.extrapaidsupport AS user_extrapaidsupport, user.famrelation AS user_famrelation, user.playout AS user_playout, user.seizurestatus AS user_seizurestatus, user.drugadministration AS user_drugadministration, user.schoolenrolment AS user_schoolenrolment, user.aidatasetnotes AS user_aidatasetnotes \nFROM user \nWHERE user.id = ?'] [parameters: (2,)]
-2019-02-26 18:02:06,823 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:02:26,682 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:02:36,074 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:03:23,539 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:03:37,909 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:05:19,395 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:07:23,610 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:07:50,562 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:12:08,876 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:18:52,995 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:20:37,371 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:21:54,791 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:27:52,545 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+  File "C:\Projects\mamafitness\app\templates\baseparallax.html", line 15, in template
+    src: url({{ url_for('static', filename='fonts/sequel-pro-webfont.woff') format('woff') }}  ) ;
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "C:\Projects\mamafitness\app\templates\auth\login.html", line 1, in top-level template code
+    {% extends 'baseparallax.html' %}
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\mamafitness\app\templates\baseparallax.html", line 15, in template
+    src: url({{ url_for('static', filename='fonts/sequel-pro-webfont.woff') format('woff') }}  ) ;
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 876, in subparse
+    self.stream.expect('variable_end')
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'format'
+2019-04-12 02:45:43,520 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 02:49:23,319 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:00:56,621 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:02:11,680 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:05:47,885 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:07:06,248 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:08:58,317 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:13:35,251 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:16:16,985 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:20:52,521 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:22:33,428 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:32:34,249 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:33:35,292 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 03:35:24,976 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 07:57:08,929 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 07:59:37,173 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:04:37,000 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:05:04,380 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:09:14,306 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:19:21,295 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:27:04,913 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:28:22,573 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:29:56,103 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:31:50,850 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:36:14,878 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:37:56,164 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:42:51,541 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:44:08,577 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:45:34,559 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:46:57,929 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:48:40,016 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:51:02,301 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:54:43,788 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 08:55:52,208 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:01:33,823 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:03:08,459 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:06:42,659 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:09:40,427 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 09:56:53,476 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:04:16,426 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:05:09,223 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:10:24,339 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:18:50,379 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:20:32,069 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:21:07,825 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:23:52,851 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:27:12,548 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:28:37,294 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:30:56,591 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:38:21,070 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:43:50,093 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:45:43,614 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:49:59,646 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:51:01,371 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:52:40,364 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 10:58:51,967 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:03:21,949 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:15:02,546 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:16:42,027 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:17:29,746 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:23:55,087 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:27:32,022 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:29:05,244 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:30:16,150 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]

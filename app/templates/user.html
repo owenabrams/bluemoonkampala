@@ -10,9 +10,10 @@
                                     <h3>Member Id: #{{ user.id }}</h3>
                                 </div>
                                 <div class="title col-sm-3">
+                                    <!-- 
                                     <a class="btn btn-xs btn-rose btn-round" href="{{ url_for('main.patientusers') }}">
                                             <span>See Other Members</span>
-                                        </a>
+                                        </a> -->
 
                                         <button class="btn btn-raised btn-round btn-default btn-block" data-toggle="modal" data-target="#noticegameplanModal">
                                             
@@ -73,8 +74,9 @@
                                 {% if user.about_me %}
                                 <strong>{{ user.about_me }}</strong> 
                                 {% endif %}</p>
+                                <!-- 
                                 <a class="btn btn-xs btn-info btn-round" href="{{ url_for('main.edit_ai_dataset') }}">
-                            <span>{{ user.username }}'s AI Dataset</span></a>
+                            <span>{{ user.username }}'s AI Dataset</span></a> -->
                         
                     </div>
                 </div>
@@ -97,17 +99,17 @@
                             <a href="#commercial" role="tab" data-toggle="tab">
                                 Engagement
                             </a>
-                        </li>
+                        </li> <!--
                         <li>
                             <a href="#" role="tab" data-toggle="tab">
                                 play Points
                             </a>
-                        </li>
+                        </li> 
                         <li>
                             <a href="#" role="tab" data-toggle="tab">
                                 Mamas Club
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="#" role="tab" data-toggle="tab">
                                 Downloads
@@ -132,7 +134,7 @@
                     <li><b>Height</b> 123.0 cm</li>
                     <li><b>Weight</b> 34.0 kg</li>
                     <li><b>Susan</b> posted 11 days ago</li>
-                </ul>
+                </ul><!--
                 {% if user == current_user %} 
                 {% if not current_user.get_task_in_progress('export_posts') %}
                             <p><a class="btn btn btn-info btn-round btn-xs" href="{{ url_for('main.export_posts') }}">{{ _('Export BMI') }}</a></p>
@@ -141,7 +143,7 @@
                 <a href="#" class="btn btn-info btn-round">
                     BMI Info
                 </a>
-                {% endif %}
+                {% endif %} -->
             </div>
         </div>
     </div>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>.gm-control-active>img{box-sizing:content-box;display:none;left:50%;pointer-events:none;position:absolute;top:50%;transform:translate(-50%,-50%)}.gm-control-active>img:nth-child(1){display:block}.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1){display:none}.gm-control-active:hover>img:nth-child(2),.gm-control-active:active>img:nth-child(3){display:block}
+</style><link type="text/css" rel="stylesheet" href="hop_files/css.css"><style>.gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}
+</style><style>.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}
+</style><style>@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style>.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style><style>.gm-style img{max-width: none;}.gm-style {font: 400 11px Roboto, Arial, sans-serif; text-decoration: none;}</style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="There is only one thing more important than free time, the freedom to dedicate it to what matters to us most.">
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="nReGxzzX3WXX88adPygYvqDbptjbR4Zrodw9bSBy">
+
+        <title>Mr. Fisk</title>
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+        <!-- Styles -->
+        <!--Bootstrap-->
+        <link href="hop_files/bootstrap.css" rel="stylesheet">
+        <!--Personalized style-->
+        <link href="hop_files/style.css" rel="stylesheet">
+        <!--Font Awesome-->
+        <link href="hop_files/font-awesome.css" rel="stylesheet">
+
+        <!-- Scripts -->
+        <script async="" src="hop_files/analytics.js"></script><script>
+            window.Laravel = {"csrfToken":"nReGxzzX3WXX88adPygYvqDbptjbR4Zrodw9bSBy"}
+            ;
+        </script>
+        <script src="hop_files/jquery_002.js"></script>
+        <script src="hop_files/bootstrap.js"></script>
+        <script src="hop_files/jquery.js"></script>
+        <script src="hop_files/cloudinary-core-shrinkwrap.js"></script>
+    <style>
+</style><style>
+</style><script type="text/javascript" charset="UTF-8" src="hop_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="hop_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="hop_files/map.js"></script><script type="text/javascript" charset="UTF-8" src="hop_files/geocoder.js"></script><script type="text/javascript" charset="UTF-8" src="hop_files/onion.js"></script><script type="text/javascript" charset="UTF-8" src="hop_files/stats.js"></script><style>
+</style><style>
+</style><script type="text/javascript" charset="UTF-8" src="hop_files/controls.js"></script><script type="text/javascript" charset="UTF-8" src="hop_files/marker.js"></script><script type="text/javascript" charset="UTF-8" src="hop_files/infowindow.js"></script></head>
+    <body>
+        <div id="app" class="blue-gray">
+            <nav id="menu" class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Collapsed Hamburger -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                                                <!-- Branding Image -->
+                        <a id="top-brand" class="navbar-brand" href="http://queharashoy.es/" style="opacity: 1; visibility: visible;">
+                                                        <img class="brand" src="hop_files/brand_blue.png" alt="Mr. Fisk">
+                                                    </a>
+                                            </div>
+                    <div class="collapse navbar-collapse navbar-right no-transition" id="app-navbar-collapse">
+                        <i class="fa fa-close fa-2x visible-xs" data-toggle="collapse" data-target="#app-navbar-collapse"></i>
+                        <!-- Right Side Of Navbar -->
+                        <ul class="nav navbar-nav navbar-right nav-locale">
+                            <li class=""><a href="http://queharashoy.es/scanfisk?locale=es">ES</a></li>
+                            <li class=" active "><a href="http://queharashoy.es/scanfisk?locale=en">EN</a></li>
+                            <li class=""><a href="http://queharashoy.es/scanfisk?locale=pt">PT</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right nav-primary">
+                                                                                    <li class="">
+                                                                                                <a style="" href="http://queharashoy.es/">Home</a>
+                            </li>
+                                                        <li class="">
+                                                                                                <a style=" background-image: url('http://queharashoy.es/img/app/lang/en/layout/wavemenu_queharashoy_blue.png'); " href="http://queharashoy.es/queharashoy">What you gonna do today?</a>
+                            </li>
+                                                        <li class="">
+                                                                                                <a style=" background-image: url('http://queharashoy.es/img/app/lang/en/layout/wavemenu_cocinoonococino_blue.png'); " href="http://queharashoy.es/cocinoonococino">Cooking or not?</a>
+                            </li>
+                                                        <li class="active">
+                                                                                                <a style=" background-image: url('http://queharashoy.es/img/app/lang/en/layout/wavemenu_scanfisk_blue.png'); " href="http://queharashoy.es/scanfisk">Scanfisk</a>
+                            </li>
+                                                        <li class="">
+                                                                                                <a style=" background-image: url('http://queharashoy.es/img/app/lang/en/layout/wavemenu_contacto_blue.png'); " href="http://queharashoy.es/contacto">Contact</a>
+                            </li>
+                                                    </ul>
+                        <div class="mas-planes visible-xs">
+                            <span>need more free-time ideas?</span>
+                            <span class="social">
+                                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                                <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                                <a href="#"><i class="fa fa-youtube-play fa-2x"></i></a>
+                            </span>
+                            <span class="bmo"><a href="http://bmo.agency/" target="_white">Powered by BMO</a></span>
+                        </div>
+                        <a class="the-brand visible-xs" href="http://queharashoy.es/">
+                            <img class="brand" src="hop_files/brand_white_total.png" alt="Mr. Fisk">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="page-scanfisk">
+    <div class="block-a color-blue-secondary" navbar-theme="blue-gray">
+        <div class="container middle height100">
+            <div class="box">
+                <p class="h55 helveticaneue-condensedbold">THE SOURCE <br>OF WELL-BEING</p>
+                <p class="h22 helveticaneue-condensedbold">Scanfisk was 
+established in Zaragoza in 1994 with the aim to provide consumers with 
+fresh, high-quality fish. A goal that survived and helped the company 
+grow during more than two decades.</p>
+                <p class="h22 helveticaneue-condensedbold">These years 
+let us realize that the thing that really makes us enjoy and value our 
+work is helping people nourish their quality of life. We believe that 
+fish should not only contribute to improving the customers' diet but all
+ aspects their day-to-day life. Understanding our product as a source of
+ quality of life became our hallmark; We are Fisk.</p>
+                <p class="h22 helveticaneue-condensedbold">Being Fisk 
+signifies choosing a lifestyle where nothing is more important than 
+well-being in all its forms. Our philosophy is guided by the motto:</p>
+                <img class="eat" src="hop_files/a_eat.gif">
+                <p class="h22 helveticaneue-condensedbold">Good 
+decisions need to be taken with the head but can only be enjoyed with 
+the heart. We believe there is no better decision than to eat 
+intelligently to enjoy the advantages of your well-being to the fullest.</p>
+            </div>
+            <img class="brand" src="hop_files/a_brand.gif">
+        </div>
+    </div>
+    <div class="block-b color-white" navbar-theme="white">
+        <div class="container middle height100">
+            <div class="box">
+                <p class="h55">FRESH<br>FISH TRADING</p>
+                <p class="h22 helveticaneue-condensedbold">At the heart 
+of Scanfisk's daily activity is importing fish from the best fishing 
+areas in the world and distributing it all over the planet. This is 
+possible thanks to an exclusive logistic system that combines land, sea 
+and air transportation allowing us to reach any corner of the country in
+ less than 24 hours and any part of the globe in less than 48h.</p>
+                <p class="h16">Acquaint yourself with our complete fish catalog <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p>
+            </div>
+            <div class="trading"></div>
+        </div>
+    </div>
+    <div class="block-c color-blue-secondary" navbar-theme="blue">
+        <div class="container middle height100">
+            <div class="box">
+                <p class="h55">MAP<br>TRAYS</p>
+                <p class="h22 helveticaneue-condensedbold">After 
+properly treating the fish in our facilities and portioning into desired
+ cuts, we pack it in MAP trays to preserve its quality, improve its 
+presentation and extend its lifetime. We then distribute it to the best 
+retailers in the world who make sure our product reaches thousands of 
+tables around the planet.</p>
+                <p class="h16">Acquaint yourself with our complete MAP trays catalog <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p>
+                <div class="bandejas"></div>
+            </div>
+        </div>
+    </div>
+    <div class="block-d color-blue-secondary" navbar-theme="white">
+        <div class="container middle height100">
+            <div class="box">
+                <p class="h55">THE <br>COD</p>
+                <p class="h22 helveticaneue-condensedbold">Whatever 
+presentation of product you require, we specialise in getting the best 
+quality cod to all corners of the planet: salted, frozen or fresh, 
+whole, filleted or shredded. Whatever your needs, you can be sure to 
+find the best fitting offer.</p>
+                <p class="h16">Acquaint yourself with our complete cod catalog <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p>
+                <div class="bacalao"></div>
+            </div>
+        </div>
+    </div>
+    <div class="block-e color-white">
+        <div class="container middle height100">
+            <img class="brand" src="hop_files/e_brand.gif">
+            <div class="box">
+                <p class="h55">NOURISH <br>
+YOUR AWARENESS</p>
+                <p class="h22 helveticaneue-condensedbold">Overfishing 
+has been damaging the marine ecosystem and all the species that inhabit 
+it for many years. To make its footprint in the long fight against this 
+increasingly pressing problem, Scanfisk created Azorfisk. A declaration 
+of intentions to respect and care for planet Earth feeds the sustainable
+ spirit of all the actors surrounding the organization.</p>
+                <p class="h26">SUSTAINABLE PRODUCT, UNEQUALLED QUALITY</p>
+                <p class="h22 helveticaneue-condensedbold">Azorfisk, 
+located on the shores of the astonishing Azores islands, stays faithful 
+to the artisanal fishing techniques that have hardly changed since the 
+Industrial Revolution. This reality makes the Azores one of the best 
+fishing locations in the world and the fish caught there is known for 
+its quality and freshness.</p>
+            </div>
+        </div>
+    </div>
+    <div class="block-f color-gray" navbar-theme="blue">
+        <div class="container middle height100">
+            <span class="h15 helveticaneue-condensedbold">This product 
+comes from a fishery that has been independently certified to the MSC’s 
+standard for a well-managed and sustainable fishery. www.msc.org</span>
+            <img class="certified" src="hop_files/f_certified.gif">
+        </div>
+    </div>
+    <div id="map-canvas" class="block-g color-white" navbar-theme="white" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(255, 255, 255);"><div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;" class="gm-style"><div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;" tabindex="0"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 995; transform: matrix(1, 0, 0, 1, -175, -210);"><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 995; transform: matrix(1, 0, 0, 1, -175, -210);"><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_004.png"></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_006.png"></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_008.png"></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_007.png"></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_005.png"></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_012.png"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 995; transform: matrix(1, 0, 0, 1, -175, -210);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 256px;"></div></div></div><div style="width: 51px; height: 71px; overflow: hidden; position: absolute; left: 35px; top: -45px; z-index: 26;"><img style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; width: 51px; height: 71px; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div><div style="width: 51px; height: 71px; overflow: hidden; position: absolute; left: -2127px; top: 116px; z-index: 187;"><img style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; width: 51px; height: 71px; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div><div style="width: 51px; height: 71px; overflow: hidden; position: absolute; left: 104px; top: -37px; z-index: 34;"><img style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; width: 51px; height: 71px; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div><div style="width: 51px; height: 71px; overflow: hidden; position: absolute; left: -136px; top: -98px; z-index: -27;"><img style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; width: 51px; height: 71px; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div><div style="width: 51px; height: 71px; overflow: hidden; position: absolute; left: -2120px; top: 90px; z-index: 161;"><img style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; width: 51px; height: 71px; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 995; transform: matrix(1, 0, 0, 1, -175, -210);"><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt.png"></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_010.png"></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_009.png"></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_002.png"></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_003.png"></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" draggable="false" alt="" role="presentation" src="hop_files/vt_011.png"></div></div></div></div><div style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;" class="gm-style-pbc"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 67px; height: 87px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 27px; top: -53px; z-index: 26;" title=""><img style="position: absolute; left: 0px; top: 0px; width: 67px; height: 87px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div><div style="width: 67px; height: 87px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -2135px; top: 108px; z-index: 187;" title=""><img style="position: absolute; left: 0px; top: 0px; width: 67px; height: 87px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div><div style="width: 67px; height: 87px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: 96px; top: -45px; z-index: 34;" title=""><img style="position: absolute; left: 0px; top: 0px; width: 67px; height: 87px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div><div style="width: 67px; height: 87px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -144px; top: -106px; z-index: -27;" title=""><img style="position: absolute; left: 0px; top: 0px; width: 67px; height: 87px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div><div style="width: 67px; height: 87px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -2128px; top: 82px; z-index: 161;" title=""><img style="position: absolute; left: 0px; top: 0px; width: 67px; height: 87px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="hop_files/map_marker.png" draggable="false"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: medium none;" src="hop_files/a.htm" frameborder="0"></iframe><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a style="position: static; overflow: visible; float: none; display: inline;" target="_blank" rel="noopener" href="https://maps.google.com/maps?ll=42.5,-3.56&amp;z=5&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Open this area in Google Maps (opens a new window)"><div style="width: 66px; height: 26px; cursor: pointer;"><img style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" alt="" src="hop_files/google_white5_hdpi.png" draggable="false"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 300px; height: 180px; position: absolute; left: 153px; top: 110px;"><div style="padding: 0px 0px 10px; font-size: 16px; box-sizing: border-box;">Map Data</div><div style="font-size: 13px;">Map data ©2019 GeoBasis-DE/BKG (©2009), Google, Inst. Geogr. Nacional, Mapa GISrael, ORION-ME</div><button style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: block; border: 0px none; margin: 0px; padding: 0px; position: absolute; cursor: pointer; -moz-user-select: none; top: 0px; right: 0px; width: 37px; height: 37px;" draggable="false" title="Close" aria-label="Close" type="button" class="gm-ui-hover-effect"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="pointer-events: none; display: block; width: 13px; height: 13px; margin: 12px;"></button></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 173px; bottom: 0px; width: 55px;"><div draggable="false" style="-moz-user-select: none; height: 14px; line-height: 14px;" class="gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer;">Map Data</a><span style="display: none;">Map data ©2019 GeoBasis-DE/BKG (©2009), Google, Inst. Geogr. Nacional, Mapa GISrael, ORION-ME</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2019 GeoBasis-DE/BKG (©2009), Google, Inst. Geogr. Nacional, Mapa GISrael, ORION-ME</div></div><div class="gmnoprint gm-style-cc" style="z-index: 1000001; -moz-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;" draggable="false"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);" href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" rel="noopener">Terms of Use</a></div></div><button style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; margin: 10px; padding: 0px; position: absolute; cursor: pointer; -moz-user-select: none; border-radius: 2px; height: 40px; width: 40px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; overflow: hidden; display: none; top: 0px; right: 0px;" draggable="false" title="Toggle fullscreen view" aria-label="Toggle fullscreen view" type="button" class="gm-control-active gm-fullscreen-control"><img style="height: 18px; width: 18px;" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%20018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%2C0v2v4h2V2h4V0H2H0z%20M16%2C0h-4v2h4v4h2V2V0H16z%20M16%2C16h-4v2h4h2v-2v-4h-2V16z%20M2%2C12H0v4v2h2h4v-2H2V12z%22%2F%3E%0A%3C%2Fsvg%3E%0A"><img style="height: 18px; width: 18px;" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%2C0v2v4h2V2h4V0H2H0z%20M16%2C0h-4v2h4v4h2V2V0H16z%20M16%2C16h-4v2h4h2v-2v-4h-2V16z%20M2%2C12H0v4v2h2h4v-2H2V12z%22%2F%3E%0A%3C%2Fsvg%3E%0A"><img style="height: 18px; width: 18px;" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%2C0v2v4h2V2h4V0H2H0z%20M16%2C0h-4v2h4v4h2V2V0H16z%20M16%2C16h-4v2h4h2v-2v-4h-2V16z%20M2%2C12H0v4v2h2h4v-2H2V12z%22%2F%3E%0A%3C%2Fsvg%3E%0A"></button><div style="position: absolute; -moz-user-select: none; height: 14px; line-height: 14px; right: 71px; bottom: 0px;" draggable="false" class="gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><span>200 km&nbsp;</span><div style="position: relative; display: inline-block; height: 8px; bottom: -1px; width: 54px;"><div style="width: 100%; height: 4px; position: absolute; left: 0px; top: 0px;"></div><div style="width: 4px; height: 8px; left: 0px; top: 0px; background-color: rgb(255, 255, 255);"></div><div style="width: 4px; height: 8px; position: absolute; background-color: rgb(255, 255, 255); right: 0px; bottom: 0px;"></div><div style="position: absolute; background-color: rgb(102, 102, 102); height: 2px; left: 1px; bottom: 1px; right: 1px;"></div><div style="position: absolute; width: 2px; height: 6px; left: 1px; top: 1px; background-color: rgb(102, 102, 102);"></div><div style="width: 2px; height: 6px; position: absolute; background-color: rgb(102, 102, 102); bottom: 1px; right: 1px;"></div></div></div></div></div></div></div>
+</div>
+                        <footer class="footer">
+                <div class="container">
+                    <div class="block-a">
+                        <ul class="nav navbar-nav nav-primary">
+                                                        <li class=""><a href="http://queharashoy.es/">Home</a></li>
+                                                        <li class=""><a href="http://queharashoy.es/queharashoy">What you gonna do today?</a></li>
+                                                        <li class=""><a href="http://queharashoy.es/cocinoonococino">Cooking or not?</a></li>
+                                                        <li class="active"><a href="http://queharashoy.es/scanfisk">Scanfisk</a></li>
+                                                        <li class=""><a href="http://queharashoy.es/contacto">Contact</a></li>
+                                                    </ul>
+                        <div class="newsletter">
+                            <p>subscribe to receive our news <br class="visible-xs">and transform your day into a perfect plan</p>
+                            <form id="app-newsletter" class="form-inline" action="http://queharashoy.es/newsletter" success="Thanks for subscribing!" fail="Error" novalidate="">
+                                <input name="name" type="text" placeholder="Name:" minlength="5" required="required">
+                                <input name="email" type="email" placeholder="Email:" required="required" unique="unique">
+                                <input type="submit">
+                                <input name="_token" type="hidden" value="nReGxzzX3WXX88adPygYvqDbptjbR4Zrodw9bSBy">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="block-b">
+                        <div class="navbar-text">
+                            <span>need more free-time ideas?</span>
+                            <span class="social">
+                                <a href="https://www.facebook.com/MrFiskEspana"><i class="fa fa-facebook fa-2x"></i></a>
+                                <a href="https://twitter.com/MrFiskEspana"><i class="fa fa-twitter fa-2x"></i></a>
+                                <a href="https://www.instagram.com/MrFiskEspana"><i class="fa fa-instagram fa-2x"></i></a>
+                                <a href="#"><i class="fa fa-youtube-play fa-2x"></i></a>
+                            </span>
+                            <span class="bmo"><a href="http://bmo.agency/" target="_white">Powered by BMO</a></span>
+                        </div>
+                        <a class="navbar-brand" href="http://queharashoy.es/">
+                            <img class="brand" src="hop_files/brand_white_total.png" alt="Mr. Fisk">
+                        </a>
+                    </div>
+            </div></footer>
+                    </div>
+
+        <!-- Scripts -->
+        <script src="hop_files/script.js"></script>
+        <script src="hop_files/js"></script>
+<script src="hop_files/script_002.js"></script>
+<script>
+data = [
+    ['Barcelona', 'Scanfisk', "Mercabarna and its port are one of the most important points of sale and purchase in Spain. The market processes about 100,000 tons of products per year, 85% of which are fresh. Equipped with a handling room to carry out the evisceration and cutting work as well as thermally suitable spaces for the commercialization of frozen products, Scanfisk has a point of purchase in the Box No. 53. We specialize in monkfish, tuna, hake, and several other species."],
+    ['Zaragoza', 'Scanfisk Seafood, S.L.', "Zaragoza is not just Scanfisk’s birthplace, but also the hub of most of our business activity. The capital of Argon houses the company's headquarters, production plant, logistics platform as well as a point of sale in Mercazaragoza."],
+    ['Vigo', 'Scanfisk', "The Port of Vigo is a Spanish port located in the northwest of the Iberian peninsula next to the city of Vigo. In 2008, the amount of marketed fish, mollusks and crustaceans equaled to 751,971 tons making it the second largest fishing port in Atlantic Europe. Vigo is the base of many fishing companies with a significant presence in countries like Namibia, South Africa, Mozambique, Australia, Argentina, the Malvinas Islands, Chile or Peru. From the port, the fish is distributed to all corners of Spain, countries like Portugal, Italy, France as well as other more distant markets like Asia. The city also hosts important trade fairs such as Conxemar (an annual event dedicated to frozen fish products) and the World Fishing Exhibition."],
+    ['Corunha', 'Scanfisk', "The Port of A Coruña is among the most prominent in Spain by both amount and variety of merchandise. Among the many species marketed daily in the port are whiting, monkfish, and Norwegian lobster. In fact, the market of A Coruña, with its 8 exhibition & sale rooms and a combined surface area of more than 8,000 square meters, sells 85% of the Norwegian lobster, 31.5% of whiting, and 37% of anglerfish delivered to Galicia."],
+    ['Vivero', 'Scanfisk', "The port of Cillero is located in the Autonomous Community of Galicia, to the north of Vivero. The port of Cillero, one of the largest ports in the Cantabrian Sea with a total of 90 registered vessels, is currently a port with the highest fishing quota of line-caught hake in Spain. Its fleet is made up of craft boats, seine vessels, coastal trawlers, rudder boats, and trawlers of the Gran Sol. The most important species, by both volume and profit, is hake. This port keeps ahead of its competitors such as the ones in Burela, San Ciprián, Ribadeo."]
+];
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-98185496-1', 'auto');
+            ga('create', 'UA-98861177-1', 'auto', 'websupport');
+            ga('send', 'pageview');
+            ga('websupport.send', 'pageview');
+        </script>
+    
+
+</body></html>

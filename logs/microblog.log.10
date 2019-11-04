@@ -1,13 +1,4 @@
-2019-02-26 18:01:21,496 ERROR: Exception on /user/susan [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
-    context)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such column: user.casedefinition_name
-
-The above exception was the direct cause of the following exception:
-
+2019-02-26 18:29:22,240 ERROR: Exception on /user/susan [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,56 +8,73 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\projects\njohnson\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Projects\njohnson\app\main\routes.py", line 16, in before_request
-    if current_user.is_authenticated:
-  File "c:\projects\njohnson\virtual\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\projects\njohnson\virtual\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 302, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\login_manager.py", line 317, in _load_user
-    return self.reload_user()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\login_manager.py", line 279, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Projects\njohnson\app\models.py", line 247, in load_user
-    return User.query.get(int(id))
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 864, in get
-    return self._get_impl(ident, loading.load_on_ident)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 897, in _get_impl
-    return fallback_fn(self, key)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\loading.py", line 223, in load_on_ident
-    return q.one()
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2814, in one
-    ret = self.one_or_none()
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2784, in one_or_none
-    ret = list(self)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2855, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\orm\query.py", line 2878, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 945, in execute
-    return meth(self, multiparams, params)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\sql\elements.py", line 263, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1053, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
-    context)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
-    exc_info
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Projects\njohnson\app\main\routes.py", line 140, in user
+    next_url=next_url, prev_url=prev_url)
+  File "c:\projects\njohnson\virtual\lib\site-packages\flask\templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
-    context)
-  File "c:\projects\njohnson\virtual\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.casedefinition_name [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen, user.last_message_read_time AS user_last_message_read_time, user.picture AS user_picture, user.color AS user_color, user.sex AS user_sex, user.age AS user_age, user.dob AS user_dob, user.pob AS user_pob, user.weight AS user_weight, user.height AS user_height, user.village AS user_village, user.parish AS user_parish, user.subcounty AS user_subcounty, user.lon AS user_lon, user.lat AS user_lat, user.casedefinition_name AS user_casedefinition_name, user.casedefinition_characteristics AS user_casedefinition_characteristics, user.dateofonset AS user_dateofonset, user.ageofonset AS user_ageofonset, user."where" AS user_where, user.veryfirstsignssymptoms AS user_veryfirstsignssymptoms, user.guardian_father AS user_guardian_father, user.guardian_mother AS user_guardian_mother, user.guardian_other AS user_guardian_other, user.telephone1 AS user_telephone1, user.telephone2 AS user_telephone2, user.nameofidpcamp AS user_nameofidpcamp, user.yearsspentinidpcamp AS user_yearsspentinidpcamp, user.watersourceduringonset AS user_watersourceduringonset, user.numberofsiblings AS user_numberofsiblings, user.numberofsiblingswithnodding AS user_numberofsiblingswithnodding, user.numberofsiblingsalive AS user_numberofsiblingsalive, user.numberofsiblingswithepilepsy AS user_numberofsiblingswithepilepsy, user.noddingrelateddeathsinfam AS user_noddingrelateddeathsinfam, user.patientplaceofmedicalservice AS user_patientplaceofmedicalservice, user.typeofnearesthealthcenter AS user_typeofnearesthealthcenter, user.address AS user_address, user.famsize AS user_famsize, user.pstatus AS user_pstatus, user.medu AS user_medu, user.fedu AS user_fedu, user.mhealth AS user_mhealth, user.fhealth AS user_fhealth, user.mjob AS user_mjob, user.fjob AS user_fjob, user.reason AS user_reason, user.guardian AS user_guardian, user.traveltime AS user_traveltime, user.nursevisittime AS user_nursevisittime, user.mealsdaily AS user_mealsdaily, user.malnutritiontreatment AS user_malnutritiontreatment, user.siblingswithrelatedsickness AS user_siblingswithrelatedsickness, user.seizurespermonth AS user_seizurespermonth, user.durationofseizure AS user_durationofseizure, user.activitylevel AS user_activitylevel, user.behavioralproblems AS user_behavioralproblems, user.triggers AS user_triggers, user.screeningfailed AS user_screeningfailed, user.extranutritionalsupport AS user_extranutritionalsupport, user.famed AS user_famed, user.extrapaidsupport AS user_extrapaidsupport, user.famrelation AS user_famrelation, user.playout AS user_playout, user.seizurestatus AS user_seizurestatus, user.drugadministration AS user_drugadministration, user.schoolenrolment AS user_schoolenrolment, user.aidatasetnotes AS user_aidatasetnotes \nFROM user \nWHERE user.id = ?'] [parameters: (2,)]
+  File "C:\Projects\njohnson\app\templates\user.html", line 316, in template
+    {% endblock %}
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 212, in parse_if
+    node.body = self.parse_statements(('name:elif', 'name:else',
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 144, in parse_statement
+    self.fail_unknown_tag(token.value, token.lineno)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 97, in fail_unknown_tag
+    return self._fail_ut_eof(name, self._end_token_stack, lineno)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2019-02-26 18:31:35,654 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 18:34:42,846 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 18:36:37,303 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 18:57:41,604 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 18:59:44,827 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 19:01:01,079 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 19:01:20,466 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 19:08:18,840 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 19:34:19,835 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 19:34:46,552 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 19:35:42,137 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 19:41:53,097 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+2019-02-26 19:50:13,257 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]

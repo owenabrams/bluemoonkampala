@@ -1,128 +1,101 @@
-2019-04-12 11:30:42,433 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-12 11:37:55,935 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-12 11:43:51,887 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-12 15:20:59,822 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-12 15:23:03,747 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-12 15:25:24,448 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 08:01:23,331 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 17:37:24,631 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 17:46:06,426 ERROR: Exception on /export_posts [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
-    sock = self._connect()
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
-    raise err
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
-    sock.connect(socket_address)
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3443, in execute
-    return execute(conn, stack, raise_on_error)
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
-    connection.send_packed_command(all_cmds)
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
-    self.connect()
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
-    sock = self._connect()
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
-    raise err
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
-    sock.connect(socket_address)
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Projects\mamafitness\app\main\routes.py", line 365, in export_posts
-    current_user.launch_task('export_posts', _('Exporting posts...'))
-  File "C:\Projects\mamafitness\app\models.py", line 152, in launch_task
-    *args, **kwargs)
-  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 316, in enqueue
-    job_id=job_id, at_front=at_front, meta=meta)
-  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 263, in enqueue_call
-    job = self.enqueue_job(job, at_front=at_front)
-  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 341, in enqueue_job
-    pipe.execute()
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3458, in execute
-    return execute(conn, stack, raise_on_error)
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
-    connection.send_packed_command(all_cmds)
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
-    self.connect()
-  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
-2019-04-16 18:09:54,686 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 18:20:39,643 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 18:21:27,702 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 18:29:41,082 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 19:12:03,027 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 19:18:15,955 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 19:20:12,448 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:07:23,848 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:13:31,015 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:15:26,061 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:24:06,192 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:32:20,966 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:36:17,602 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:40:22,982 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:42:47,711 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:45:28,834 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:51:21,285 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-16 23:55:26,127 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:00:58,615 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:06:01,862 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:06:42,878 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:07:50,627 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:08:35,205 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:11:41,601 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:13:31,454 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:14:59,313 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:17:40,062 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:21:31,816 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:22:51,902 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:25:21,427 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:57:06,563 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 00:59:51,389 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 01:03:47,852 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 01:08:28,284 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 01:12:30,525 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 01:13:40,760 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 01:22:51,612 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 01:24:08,314 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-17 20:33:26,404 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-04-18 21:50:52,266 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
-2019-05-07 12:36:48,198 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 12:44:30,708 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 13:06:51,101 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 13:10:52,641 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 13:15:05,400 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 13:24:29,757 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 13:32:16,632 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 13:39:06,914 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 13:50:23,190 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
-2019-05-07 13:54:44,921 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-11-01 23:01:02,061 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-01 23:01:53,142 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-01 23:03:59,809 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-01 23:06:27,752 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-02 00:03:00,160 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-02 06:39:50,930 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-02 06:42:01,514 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-02 06:43:40,043 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 15:34:28,384 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 15:47:00,136 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 15:52:14,633 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 15:54:43,091 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 16:04:48,345 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 16:06:11,512 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 16:06:57,044 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 16:07:36,408 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 17:24:30,870 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 17:41:44,362 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 17:47:19,834 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 17:55:32,401 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 17:59:16,636 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 18:02:49,659 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 18:05:41,130 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 18:12:32,697 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 18:34:20,925 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 18:34:42,089 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 18:55:31,242 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:01:22,614 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:07:01,839 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:19:10,946 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:21:04,089 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:29:22,997 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:30:36,767 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:31:08,971 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:33:28,378 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:47:06,666 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:47:50,237 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:58:48,077 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 19:59:45,182 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:00:25,058 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:01:53,193 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:02:53,675 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:04:18,152 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:05:23,850 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:06:58,977 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:10:28,918 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:11:43,060 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:13:43,580 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:17:59,152 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:19:19,432 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:22:22,509 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:23:45,161 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:25:05,693 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:26:19,851 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:31:03,421 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:35:25,827 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:36:39,714 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:37:46,680 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:39:30,094 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:45:56,265 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:48:10,099 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:49:23,193 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 20:57:09,373 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 21:01:59,833 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 21:04:43,967 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 21:06:48,145 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 23:37:46,970 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 23:41:52,811 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 23:43:45,610 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 23:45:31,474 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-03 23:47:57,220 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:02:54,363 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:05:22,518 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:40:44,758 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:44:34,966 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:45:48,406 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:47:13,208 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:48:28,823 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:53:42,128 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:57:07,969 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:58:13,158 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 09:59:06,136 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:00:46,303 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:03:26,156 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:05:53,156 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:09:56,702 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:16:26,151 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:17:24,685 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:18:28,021 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:20:11,859 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:22:40,259 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:24:03,327 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:25:29,889 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:33:08,342 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:51:49,215 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:57:49,984 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 10:59:28,956 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 11:15:34,255 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 11:16:40,771 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 11:29:00,651 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-11-04 11:33:37,722 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]

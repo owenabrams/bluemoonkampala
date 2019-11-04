@@ -1,4 +1,47 @@
-2019-02-26 18:27:55,914 ERROR: Exception on /user/susan [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
+2019-04-12 11:30:42,433 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:37:55,935 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 11:43:51,887 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 15:20:59,822 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 15:23:03,747 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-12 15:25:24,448 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 08:01:23,331 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 17:37:24,631 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 17:46:06,426 ERROR: Exception on /export_posts [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3443, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,55 +57,72 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Projects\njohnson\app\main\routes.py", line 140, in user
-    next_url=next_url, prev_url=prev_url)
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Projects\njohnson\app\templates\user.html", line 311, in template
-    {% endblock %}
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 212, in parse_if
-    node.body = self.parse_statements(('name:elif', 'name:else',
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 144, in parse_statement
-    self.fail_unknown_tag(token.value, token.lineno)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 97, in fail_unknown_tag
-    return self._fail_ut_eof(name, self._end_token_stack, lineno)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
-    self.fail(' '.join(message), lineno)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2019-02-26 18:29:20,300 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+  File "C:\Projects\mamafitness\app\main\routes.py", line 365, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "C:\Projects\mamafitness\app\models.py", line 152, in launch_task
+    *args, **kwargs)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 316, in enqueue
+    job_id=job_id, at_front=at_front, meta=meta)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 263, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 341, in enqueue_job
+    pipe.execute()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3458, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+2019-04-16 18:09:54,686 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 18:20:39,643 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 18:21:27,702 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 18:29:41,082 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 19:12:03,027 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 19:18:15,955 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 19:20:12,448 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:07:23,848 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:13:31,015 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:15:26,061 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:24:06,192 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:32:20,966 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:36:17,602 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:40:22,982 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:42:47,711 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:45:28,834 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:51:21,285 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-16 23:55:26,127 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:00:58,615 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:06:01,862 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:06:42,878 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:07:50,627 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:08:35,205 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:11:41,601 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:13:31,454 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:14:59,313 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:17:40,062 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:21:31,816 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:22:51,902 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:25:21,427 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:57:06,563 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 00:59:51,389 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:03:47,852 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:08:28,284 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:12:30,525 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:13:40,760 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:22:51,612 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 01:24:08,314 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-17 20:33:26,404 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-04-18 21:50:52,266 INFO: Microblog startup [in C:\Projects\mamafitness\app\__init__.py:86]
+2019-05-07 12:36:48,198 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 12:44:30,708 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:06:51,101 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:10:52,641 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:15:05,400 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:24:29,757 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:32:16,632 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:39:06,914 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:50:23,190 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 13:54:44,921 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]

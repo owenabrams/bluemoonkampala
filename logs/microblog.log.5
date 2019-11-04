@@ -1,4 +1,51 @@
-2019-02-26 18:29:22,240 ERROR: Exception on /user/susan [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
+2019-05-07 14:01:21,528 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:02:42,608 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:11:59,002 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:14:41,804 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:17:15,136 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:27:19,115 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:28:05,404 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:30:50,711 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:33:22,772 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:42:24,124 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 14:49:24,877 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 15:27:41,862 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-07 15:30:38,881 ERROR: Exception on /export_posts [GET] [in c:\projects\njohnson\virtual\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3443, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "c:\projects\njohnson\virtual\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,67 +61,66 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\projects\njohnson\virtual\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Projects\njohnson\app\main\routes.py", line 140, in user
-    next_url=next_url, prev_url=prev_url)
-  File "c:\projects\njohnson\virtual\lib\site-packages\flask\templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Projects\njohnson\app\templates\user.html", line 316, in template
-    {% endblock %}
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 212, in parse_if
-    node.body = self.parse_statements(('name:elif', 'name:else',
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 144, in parse_statement
-    self.fail_unknown_tag(token.value, token.lineno)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 97, in fail_unknown_tag
-    return self._fail_ut_eof(name, self._end_token_stack, lineno)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 90, in _fail_ut_eof
-    self.fail(' '.join(message), lineno)
-  File "c:\projects\njohnson\virtual\lib\site-packages\jinja2\parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2019-02-26 18:31:35,654 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:34:42,846 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:36:37,303 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:57:41,604 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 18:59:44,827 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 19:01:01,079 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 19:01:20,466 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 19:08:18,840 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 19:34:19,835 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 19:34:46,552 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 19:35:42,137 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 19:41:53,097 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
-2019-02-26 19:50:13,257 INFO: Microblog startup [in C:\Projects\njohnson\app\__init__.py:86]
+  File "C:\Projects\bluemoon\app\main\routes.py", line 365, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "C:\Projects\bluemoon\app\models.py", line 152, in launch_task
+    *args, **kwargs)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 316, in enqueue
+    job_id=job_id, at_front=at_front, meta=meta)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 263, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "c:\projects\njohnson\virtual\lib\site-packages\rq\queue.py", line 341, in enqueue_job
+    pipe.execute()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3458, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\projects\njohnson\virtual\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+2019-05-08 10:14:33,589 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-09 18:48:46,747 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-09 18:59:48,578 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-09 19:00:45,442 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-05-15 16:56:43,105 INFO: Microblog startup [in C:\Projects\bluemoon\app\__init__.py:86]
+2019-09-24 00:36:38,463 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:22:57,331 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:25:34,923 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:27:21,099 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:31:45,813 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:34:58,565 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:36:25,311 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:42:45,461 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:43:59,960 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:47:17,832 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:52:26,024 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:56:44,502 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:58:06,163 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:59:34,124 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 11:59:38,956 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:02:48,279 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:03:50,143 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:06:26,892 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:07:16,587 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:08:57,541 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:11:47,856 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:14:06,960 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:15:09,308 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:17:16,671 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:17:54,265 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:18:14,511 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:18:50,497 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:19:45,580 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:23:12,683 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:27:53,105 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:36:57,991 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:40:22,724 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:41:48,960 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:49:04,582 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:53:51,127 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 12:58:21,214 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 13:01:11,218 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 13:09:25,113 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]
+2019-09-24 13:32:14,266 INFO: Microblog startup [in C:\Projects\bluemoonkampala\app\__init__.py:86]

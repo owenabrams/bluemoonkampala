@@ -7,7 +7,7 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 import redis
-import rq
+#import rq
 from app import db, login
 from app.search import add_to_index, remove_from_index, query_index
 
@@ -177,9 +177,6 @@ class User(UserMixin, db.Model):
     lat = db.Column(db.String(64))
     activitylevel = db.Column(db.String(140), index=True) # Not active, Moderately active, very active --- playing, walking, bathing, listening, talking, laughing, reading, home chores 
     
-    #Case Definition
-    casedefinition_name = db.Column(db.String(140), index=True) # Suspected, Probable, Confirmed - check also and fill table of "Case Definition Details"
-    casedefinition_characteristics = db.Column(db.String(140), index=True) # Suspected, Probable, Confirmed - check also and fill table of "Case Definition Details"
     
     # Health Classification
     dateofonset = db.Column(db.DateTime, index=True) #if not sure, - write beginning of the year
@@ -295,10 +292,10 @@ class Post(SearchableMixin, db.Model):
     body = db.Column(db.String(140))
 
     # CDC Nutritional Status
-    height = db.Column(db.Float)
-    weight = db.Column(db.Float)
-    bmi = db.Column(db.Float)
-    muac = db.Column(db.Float)
+    height = db.Column(db.Float, default=0.0)
+    weight = db.Column(db.Float, default=0.0)
+    bmi = db.Column(db.Float, default=0.0)
+    muac = db.Column(db.Float, default=0.0)
 
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

@@ -49,6 +49,15 @@ def index():
                            prev_url=prev_url, convertJs=convertJs, mainJs=mainJs)
 
 
+# Here is the Service Worker  . . . . ..  Route
+@bp.route('/sw.js', methods=['GET'])
+def sw():
+    return current_app.send_static_file('/sw.js')
+
+
+
+
+
 # Start Models for selectField -----------------------------------------
 
 @bp.route('/yesno', methods=['GET', 'POST'])

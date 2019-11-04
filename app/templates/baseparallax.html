@@ -1,764 +1,1090 @@
 <html>
-    <head>
-			<meta charset="utf-8" />
 
-			<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='img/apple-icon.png') }}">
-			
-			<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
-			
-			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<head>
+	<meta charset="utf-8" />
 
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='img/apple-icon.png') }}">
 
-			<style type="text/css">
-				@font-face {
-				font-family: 'sequel-pro';
-				src: url({{ url_for('static', filename='static/fonts/sequel-pro-webfont.woff') }});
-				
-				
-				font-weight:bold; 
-			}
-			</style>
-			
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-<style type="text/css">
-	@font-face {
-    font-family: 'great_vibesregular';
-    src: url('static/fonts/greatvibes-regular-webfont.eot');
-    src: url('static/fonts/greatvibes-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('static/fonts/greatvibes-regular-webfont.woff2') format('woff2'),
-         url('static/fonts/greatvibes-regular-webfont.woff') format('woff'),
-         url('static/fonts/greatvibes-regular-webfont.ttf') format('truetype'),
-		 url('static/fonts/greatvibes-regular-webfont.svg#great_vibesregular') format('svg');
-		 
-    font-weight: normal;
-	font-style: italic;
+	<style type="text/css">
+		@font-face {
+			font-family: 'sequel-pro';
+			src: url('static/fonts/sequel-pro-webfont.woff') format('woff');
 
-}
-
-@font-face {
-    font-family: 'Medusa';
-    src: url('fonts/Medusa.eot');
-    src: url('fonts/Medusa.eot?#iefix') format('embedded-opentype'),
-        url('fonts/Medusa.woff2') format('woff2'),
-        url('fonts/Medusa.woff') format('woff'),
-        url('fonts/Medusa.ttf') format('truetype'),
-        url('fonts/Medusa.svg#Medusa') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+			font-weight: bold;
+		}
+	</style>
 
 
-@font-face {
-    font-family: 'billy_ohioregular';
-    src: url('fonts/billy_ohio-webfont.eot');
-    src: url('fonts/billy_ohio-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/billy_ohio-webfont.woff2') format('woff2'),
-         url('fonts/billy_ohio-webfont.woff') format('woff'),
-         url('fonts/billy_ohio-webfont.ttf') format('truetype'),
-         url('fonts/billy_ohio-webfont.svg#billy_ohioregular') format('svg');
-	font-weight: normal;
-	font-style: italic;
+
+	<style type="text/css">
+		@font-face {
+			font-family: 'great_vibesregular';
+			src: url('static/fonts/greatvibes-regular-webfont.eot');
+			src: url('static/fonts/greatvibes-regular-webfont.eot?#iefix') format('embedded-opentype'),
+				url('static/fonts/greatvibes-regular-webfont.woff2') format('woff2'),
+				url('static/fonts/greatvibes-regular-webfont.woff') format('woff'),
+				url('static/fonts/greatvibes-regular-webfont.ttf') format('truetype'),
+				url('static/fonts/greatvibes-regular-webfont.svg#great_vibesregular') format('svg');
+
+			font-weight: normal;
+			font-style: italic;
+
+		}
+
+		@font-face {
+			font-family: 'Medusa';
+			src: url('fonts/Medusa.eot');
+			src: url('fonts/Medusa.eot?#iefix') format('embedded-opentype'),
+				url('fonts/Medusa.woff2') format('woff2'),
+				url('fonts/Medusa.woff') format('woff'),
+				url('fonts/Medusa.ttf') format('truetype'),
+				url('fonts/Medusa.svg#Medusa') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
 
 
-}
-		
-</style>
-
-        {% if title %}
-        <title>{{ title }} - Blue Moon Kampala</title>
-        {% else %}
-        <title>Blue Moon Kampala</title>
-        {% endif %}
-
-        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    
-        <!--     Fonts and icons     -->
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-
-        <!-- CSS Files -->
-            
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/material-kit.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/vertical-nav.css') }}">
-    
-        <!-- <style> body {background-color: #ffe72c} </style> -->
+		@font-face {
+			font-family: 'billy_ohioregular';
+			src: url('fonts/billy_ohio-webfont.eot');
+			src: url('fonts/billy_ohio-webfont.eot?#iefix') format('embedded-opentype'),
+				url('fonts/billy_ohio-webfont.woff2') format('woff2'),
+				url('fonts/billy_ohio-webfont.woff') format('woff'),
+				url('fonts/billy_ohio-webfont.ttf') format('truetype'),
+				url('fonts/billy_ohio-webfont.svg#billy_ohioregular') format('svg');
+			font-weight: normal;
+			font-style: italic;
 
 
-        
-    </head>
-	<body class="product-page">
-			{% block navbar %}
+		}
+	</style>
 
-			<!-- Navbar will come here -->
-	<nav class="navbar navbar-default navbar-transparent navbar-fixed-top "  id="sectionsNav">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					
+	{% if title %}
+	<title>{{ title }} - Blue Moon Kampala</title>
+	{% else %}
+	<title>Blue Moon Kampala</title>
+	{% endif %}
 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
-							<span class="sr-only">Toggle navigation</span>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-						</button>
-						<a class="navbar-brand" href="{{ url_for('main.index') }}"><img class="img" src="{{ url_for('static', filename = 'img/brand_blue1.png') }}" alt="Blue Moon Kampala" /></a>
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css"
+		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
-		
-					<!-- <span style="font-family: 'billy_ohioregular';"> . . .</span> -->
-		
+	<!-- CSS Files -->
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/material-kit.csss') }}">
+
+
+	<!-- <style> body {background-color: #ffe72c} </style> -->
+
+	<!-- Hop Javascript Files -->
+
+	<script src="{{ url_for('static', filename = 'hop_files/jquery_002.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'hop_files/bootstrap.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'hop_files/jquery.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'hop_files/cloudinary-core-shrinkwrap.js') }}"></script>
+
+
+
+	<!-- Hop CSS Files -->
+
+	<!--Bootstrap-->
+	<link href="{{ url_for('static', filename='hop_files/bootstrap.css') }}" rel="stylesheet">
+	<!--Personalized style-->
+	<link href="{{ url_for('static', filename='hop_files/style.css') }}" rel="stylesheet">
+	<!--Font Awesome-->
+	<link href="{{ url_for('static', filename='hop_files/font-awesome.css') }}" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/calendarstyle.css') }}">
+
+
+</head>
+
+<body>
+	{% block navbar %}
+
+	<!-- Navbar will come here -->
+	<nav id="menu" class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Collapsed Hamburger -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#app-navbar-collapse">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!-- Branding Image -->
+				<a id="top-brand" class="navbar-brand" href="http://bluemoonkampala.com/"
+					style="opacity: 1; visibility: visible;">
+					<img class="brand" src="{{ url_for('static', filename = 'hop_files/brand_blue.png') }}" alt="Hop">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-right no-transition" id="app-navbar-collapse">
+				<i class="fa fa-close fa-2x visible-xs" data-toggle="collapse" data-target="#app-navbar-collapse"></i>
+				<!-- Right Side Of Navbar -->
+				<ul class="nav navbar-nav navbar-right nav-locale">
+					<!-- 
+					<li class=""><a href="#">ES</a></li> -->
+					<li class=""><a href="#" data-toggle="modal" data-target="#noticegameplanModal"><span
+								style="color: #FCFF00;">FEES</span></a> </li>
+					<!-- 
+					<li class=" active "><a href="http://bluemoonkampala.com/scanfisk?locale=en">EN</a></li> -->
+
+					<li class=" active " data-toggle="modal" data-target="#noticeModal"><a href="#">
+							<span style="color: #FCFF00;">Calendar</span>
+						</a>
+					</li>
+					<li class=" active " data-toggle="modal" data-target="#myModal"><a href="#">
+							<span style="color: #FCFF00;">Vacancy</span>
+						</a>
+					</li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right nav-primary">
+					<li>
+						<a href="{{ url_for('main.index') }}">{{ _('Home') }}</a>
+					</li>
+
+					<li class="">
+						<a href="#" data-toggle="modal" data-target="#signuppreschoolModal"><span
+								style="color: #FCFF00;">Pre-School</span></a>
+					</li>
+					<li class="">
+						<a href="#" data-toggle="modal" data-target="#noticeprimaryModal"><span
+								style="color: #FCFF00;">Primary</span></a>
+
+					</li>
+
+					<li class="">
+						<a href="#" data-toggle="modal" data-target="#mycontactModal"><span
+								style="color: #FCFF00;">Contact Us</span></a>
+					</li>
+				</ul>
+				<div class="mas-planes visible-xs">
+
+					<span class="social">
+						<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+						<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+						<a href="#"><i class="fa fa-youtube-play fa-2x"></i></a>
+					</span>
+
 				</div>
-		
 
 			</div>
-			</nav>
-		<!-- end navbar -->
-
-
-		{% endblock %}
-		
-		<div class="page-home" style="background-image: url('static', filename='img/bg7home.jpg'); background-size: cover; background-position: top center;" >
-				<div class="block-a" navbar-theme="blue">
-					<ul id="scene">
-						<li class="layer" data-depth="0.50"><div class="container"><div class="scene-salmon"></div></li>
-						<li class="layer" data-depth="0.30"><div class="container"><img class="scene-ingredients2" src="{{ url_for('static', filename = 'img/app/layout/home/a_ingredients2.png') }}" /></div></li>
-						<li class="layer" data-depth="0.25"><div class="container"><img class="scene-label" src="{{ url_for('static', filename = 'img/app/layout/home/a_label.png') }}" /></div></li>
-						<li class="layer" data-depth="0.40"><div class="container"><img class="scene-ingredients3" src="{{ url_for('static', filename = 'img/app/layout/home/a_ingredients3.png') }}" /></div></li>
-						<li class="layer" data-depth="0.20"><div class="scene-ingredients"></div></li>
-					</ul>
-					<div class="container title">
-							<span class="title text"> Of WOBBLERS, <br />BUSY BEES, <br class='hidden-xs' />, & WHOO ALL KIND OF BIRDS <br class='visible-xs' /> ~ <br class='hidden-xs' /><span class='decoration'>~</span> 
-				&nbsp;</span>
-							<a href="#bluemoonuganda">
-								<i class="fa fa-2x fa-angle-double-down visible-xs" aria-hidden="true"></i>
-							</a>
-						</div> 
-
-						
-
-
-							</div>	 <!-- End Div class block-a--> 
-
-							
-								
-									<div class="cd-section" id="features">
-								
-									<div class="container">
-								
-										<!--     *********     FEATURES 1      *********      --> 
-								
-										<div class="features-1" style="background-image: url({{ url_for('static', filename='img/test-bg7.png') }}); background-repeat: no-repeat;">
-											<div class="row" >
-												<div class="col-md-8 col-md-offset-2">
-													<h2 class="title">Once in ... a Blue Moon</h2>
-													<h5 class="description">A home where children will access the highest quality of foundation stage education.
-															We operate under the International Early Years Curriculum (IEYC); a new research-based curriculum recognizing global best practice in early
-															childhood education and the developmental needs of 2 - 5 year olds. We support key areas of learning through holistic enquiry and play- based approaches.</h5>
-												</div>
-											</div>
-								
-											<div class="row">
-												<div class="col-md-4">
-													<div class="info">
-														<!---
-														<div class="icon icon-info">
-															<i class="material-icons">chat</i>
-														</div> -->
-														<h4 class="info-title">Welcome [ Habari ]!</h4> 
-														<p>		Its not just a saying, at Bluemoon we view each child 
-																as a creative, capable and curious learner. We want 
-																children to learn in an environment that is suitable 
-																to each child versus the classroom as a whole.
-																Have you seen this anywhere? Let us know and we shall
-																match it. 
-															
-																</p>
-													</div>
-												</div>
-								
-												<div class="col-md-4">
-													
-													<div class="info">
-														<!--
-														<div class="icon icon-success">
-															<i class="material-icons">verified_user</i>
-														</div> -->
-														<h4 class="info-title">Wobbling Bees and Birds</h4> 
-														<p> To tap into each child's uniqueness, we have three age groups
-															classified as "Wobblers", "Busy bees", "Sun & Sugar birds".
-															A child’s day begins with small group activities, arts and crafts, 
-															dramatic play, rug work or table work. Songs and greetings 
-															interleave this session
-															readmore ... </p>
-													</div>
-												</div>
-								
-												<div class="col-md-4">
-													
-													<div class="info">
-														<!--
-														<div class="icon icon-danger">
-															<i class="material-icons">fingerprint</i>
-														</div> -->
-														<h4 class="info-title">Learning through play</h4> 
-														<p>Playing offers many developmental benefits for learning, not just for children
-															but adults as well, oh yes we encourage our parents to join in on the fun 
-															in sessions such as "Messy Play". Sensory play sessions allow children to explore 
-															using their senses they build a unique neurological pathways experience.
-															readmore . . .</p>
-													</div>
-												</div>
-											</div>
-								
-										</div>
-								
-										<!--     *********    END FEATURES 1      *********      -->
-								
-									</div>
-
-								
-									<div class="cd-section" id="projects">
-								
-									<!--     *********    PROJECTS 1     *********      -->
-								
-									<div class="projects-1" id="projects-1">
-								
-										<div class="container">
-								
-											<div class="row">
-												<div class="col-md-6 col-md-offset-3">
-								
-												</div>
-								
-												<div class="col-md-6">														
-													<div class="card card-raised card-background" style="background-image: url({{ url_for('static', filename='img/examples/card-blog1.jpg') }}) ">
-								
-														<div class="card-content">
-															<!-- <h6 class="category text-info">Productivity</h6> -->
-															<a href="#bluemoon">
-																<h3 class="card-title">Join us today!</h3>
-															</a>
-															<p class="card-description">
-																We seek to build on a deliberate online and offline experience based on a feedback based strategy, by encouraging and motivating our members.
-															</p>
-															<a href="#bluemoon" class="btn btn-danger btn-round">
-																<!-- 
-																<i class="material-icons">content_copy</i> -->Join Now!
-															</a>
-														</div>
-													</div>
-												</div>
-								
-												<div class="col-md-6">														
-													<div class="card card-raised card-background"  style="background-image: url({{ url_for('static', filename='img/examples/card-blog3.jpg') }})">
-														<div class="card-content">
-															<!--  <h6 class="category text-info">Design</h6> -->
-															<h3 class="card-title">Benefits Of Messy Play</h3>
-															<p class="card-description">
-																	Mental stability leads to overall prosperity. Our
-																	positive outlook on life translates positively directly and firstly to the body
-																	in which it is housed and in turn has a ripple effect and impact on those
-																	around us.
-															</p>
-															<button class="btn btn-raised btn-round btn-default btn-block" data-toggle="modal" data-target="#noticegameplanModal">
-                                            
-																Info
-															</button>
-																<!-- 
-																<i class="material-icons">build</i> -->More Info
-															</a>
-														</div>
-													</div>
-												</div>
-								
-											</div>
-								
-										</div>
-									</div>
-								
-									<!--     *********    END PROJECTS 1      *********      -->
-								
-									</div>
-								
-									<div class="cd-section" id="headers">
-									<!--     *********     HEADER 3      *********      -->
-								
-									<div class="header-3">
-
-								
-										<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-											<div class="carousel slide" data-ride="carousel">
-								
-												<!-- Indicators -->
-												<ol class="carousel-indicators">
-													<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-													<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-													<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-												</ol>
-								
-												<!-- Wrapper for slides -->
-												<div class="carousel-inner">
-													<div class="item active">
-														<div class="page-header header-filter" style="background-image: url({{ url_for('static', filename='img/dg1.jpg') }});">
-								
-															<div class="container">
-																<div class="row">
-																	<div class="col-md-6">
-																		<h1 class="title">Happy > Wobblers | Bees | Birds.</h1>
-																		<h4>Are blah bhlasdh djfhkg fdjgkfg eriuier dfjkgdjfg ahsd wyeter jhxc eruyuert mxncvmc?</h4>
-																		<br />
-																		<a href="https://youtu.be/nJ8XHTeOMRg" target="_blank" class="btn btn-danger btn-lg">
-																			<i class="fa fa-ticket"></i> Watch Wobbly Bees & Birds
-																		</a>
-																	</div>
-																	<div class="col-md-5 col-md-offset-1">
-																		<div class="iframe-container">
-																			<iframe src="https://youtu.be/nJ8XHTeOMRg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen height="250"></iframe>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-								
-													</div>
-													<div class="item">			
-														<div class="page-header header-filter" style="background-image: url({{ url_for('static', filename='img/dg2.jpg') }});">
-								
-															<div class="container">
-																<div class="row">
-																	<div class="col-md-8 col-md-offset-2 text-center">
-																		<h1 class="title">TIME!</h1>
-																		<h4>Are  blah bhlasdh djfhkg fdjgkfg eriuier ?</h4>
-																		<br />
-																		<h6>Connect with us on:</h6>
-																		<div class="buttons">
-																			<a href="#bluemoon" class="btn btn-just-icon btn-white btn-simple btn-lg">
-																				<i class="fa fa-twitter"></i>
-																			</a>
-																			<a href="#bluemoon" class="btn btn-just-icon btn-white btn-simple btn-lg">
-																				<i class="fa fa-facebook-square"></i>
-																			</a>
-																			<a href="#bluemoon" class="btn btn-just-icon btn-white btn-simple btn-lg">
-																				<i class="fa fa-google-plus"></i>
-																			</a>
-																			<a href="#bluemoon" class="btn btn-just-icon btn-white btn-simple btn-lg">
-																				<i class="fa fa-instagram"></i>
-																			</a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-								
-														</div>
-								
-													</div>
-								
-													<div class="item">
-														<div class="page-header header-filter" style="background-image: url({{ url_for('static', filename='img/dg3.jpg') }});">
-								
-															<div class="container">
-																<div class="row">
-																	<div class="col-md-7 col-md-offset-5 text-right">
-																		<h1 class="title">Sign Up Offer 50% Off</h1>
-																		<h4><strong>Do you need a,</strong> convenient way of helping your child grow into their own character as well as manage your busy lifestyle.</h4>
-																		<br />
-								
-																		<div class="buttons">
-																			<a href="#bluemoon" class="btn btn-white btn-simple btn-lg">
-																				<i class="material-icons">share</i> Share Offer
-																			</a>
-																			<a href="#bluemoon" class="btn btn-danger btn-lg">
-																				<i class="material-icons">shopping_cart</i> Take It Now!
-																			</a>
-																		</div>
-								
-																	</div>
-																</div>
-															</div>
-								
-														</div>
-								
-													</div>
-								
-												</div>
-								
-												<!-- Controls -->
-												
-												<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-													<i class="material-icons">&nbsp;&nbsp;&nbsp;<</i>
-												</a>
-												<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-													<i class="material-icons">>&nbsp;&nbsp;&nbsp;</i> <!-- keyboard_arrow_right-->
-												</a> 
-													<!-- End Controls-->
-											</div>
-										</div>
-								
-									</div>
-								
-									<!--     *********    END HEADER 3      *********      -->
-								
-									</div>
-
-								
-									<div class="cd-section" id="contactus">
-								
-									<!--     *********    CONTACT US 1     *********      -->
-								
-									<div class="contactus-1 section-image" style="background-image: url({{ url_for('static', filename='img/examples/city.jpg') }})">
-								
-										<div class="container">
-											<div class="row">
-												<div class="col-md-5">
-													<h2 class="title">Get in Touch</h2>
-													<!-- 
-													<h5 class="description">You need more information? Check what other people are saying about us.</h5>
-													-->
-													<div class="info info-horizontal">
-														<div class="icon icon-primary">
-															<!-- <i class="material-icons">pin_drop</i> -->
-														</div>
-														<div class="description">
-															<h4 class="info-title">Find us at the office</h4>
-															<p> Lord Eroll, nr. 8,<br>
-																7652 Muyenga,<br>
-																Kampala
-															</p>
-														</div>
-													</div>
-													<div class="info info-horizontal">
-														<div class="icon icon-primary">
-															<!--<i class="material-icons">phone</i> -->
-														</div>
-														<div class="description">
-															<h4 class="info-title">Give us a ring</h4>
-															<p> Claire Mbonye<br>
-																+254 787 673 038<br>
-																Mon - Fri, 8:00-22:00
-															</p>
-															<button class="btn btn-raised btn-round btn-default btn-block" data-toggle="" data-target="#">
-																
-																Skype
-															</button>
-														</div>
-													</div>
-								
-												</div>
-												<div class="col-md-5 col-md-offset-2">
-													<div class="card card-contact">
-														<form role="form" id="contact-form" method="post">
-															
-															<div class="card-content">
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="form-group label-floating">
-																			<label class="control-label">First name</label>
-																			<input type="text" name="name" class="form-control">
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<div class="form-group label-floating">
-																			<label class="control-label">Last name</label>
-																			<input type="text" name="name" class="form-control">
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group label-floating">
-																	<label class="control-label">Email address</label>
-																	<input type="email" name="email" class="form-control"/>
-																</div>
-																<div class="form-group label-floating">
-																	<label class="control-label">Your message</label>
-																	<textarea name="message" class="form-control" id="message" rows="6"></textarea>
-																</div>
-								
-																<div class="row">
-																	<div class="col-md-6">
-																		<div class="checkbox">
-																			<label>
-																				<input type="checkbox" name="optionsCheckboxes">
-																				I'm not a robot
-																			</label>
-																		</div>
-																	</div>
-																	<div class="col-md-6">
-																		<button type="submit" class="btn btn-info pull-right">Send Message</button>
-																	</div>
-																</div>
-															</div>
-								
-														</form>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								
-									<!--     *********    END CONTACT US 1      *********      -->
-								
-								
-
-								
-									</div>
-
-
-								
-									<nav id="cd-vertical-nav">
-										<ul>
-											<li>
-												<a href="#features" data-number="1" data-toggle="modal" data-target="#loginModal">
-													<span class="cd-dot"></span>
-													<span class="cd-label">Login</span>
-												</a>
-											</li>
-
-											<li>
-												<a href="#headers" data-number="2">
-													<span class="cd-dot"></span>
-													<span class="cd-label">Gallery</span>
-												</a>
-											</li>
-											<!-- 
-											<li>
-												<a href="#blogs" data-number="3" data-toggle="modal" data-target="#noticeModal">
-													<span class="cd-dot"></span>
-													<span class="cd-label">Game Plan</span>
-												</a>
-											</li> -->
-											<!-- 
-											<li>
-												<a href="#teams" data-number="4">
-													<span class="cd-dot"></span>
-													<span class="cd-label">Teams</span>
-												</a>
-											</li> -->
-											<li>
-												<a href="#projects" data-number="5">
-													<span class="cd-dot"></span>
-													<span class="cd-label">Join Us Today</span>
-												</a>
-											</li>
-											<!-- 
-											<li>
-												<a href="#pricing" data-number="6">
-													<span class="cd-dot"></span>
-													<span class="cd-label">Pricing</span>
-												</a>
-											</li> -->
-											<!-- 
-											<li>
-												<a href="#testimonials" data-number="7">
-													<span class="cd-dot"></span>
-													<span class="cd-label">Testimonials</span>
-												</a>
-											</li> -->
-											<li>
-												<a href="#contactus" data-number="8">
-													<span class="cd-dot"></span>
-													<span class="cd-label">Contact Us</span>
-												</a>
-											</li>
-										</ul>
-									</nav>
-					
-					{% block content %}{% endblock %}
-			
-			
-				</div>
-				</div> 
-
-
-
-			
-
 		</div>
+	</nav>
+	<!-- end navbar -->
 
 
-		<!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-login">
-			<div class="modal-content">
-				<div class="card card-signup card-plain">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
-	
-					</div>
-					<div class="modal-body">
-						
-							
-							<div class="card-content center">
-	
-									
-						
-											
-														
-														<form action="" method="post">
-																{{ form.hidden_tag() }}
-													<div class="card card-plain">
-															{% with messages = get_flashed_messages() %}
-															{% if messages %}
-																{% for message in messages %}
-																<div class="alert alert-info" role="alert">{{ message }}</div>
-																{% endfor %}
-															{% endif %}
-															{% endwith %}
-										
-															
-															
-															<div class="card-content center">
-										
-																<div class="input-group center">
-																		<!-- 
-																		<span class="input-group-addon">
-																			<i class="material-icons">face</i>
-																		</span>
-																		-->
-																		<div class="form-group label-floating">
-																				{{ form.username.label(class="control-label") }}<br>
-																				{{ form.username(size=32, class="form-control") }}<br>
-																				{% for error in form.username.errors %}
-																				<span style="color: red;">[{{ error }}]</span>
-																				{% endfor %}
-																			</div>
-																</div>
-										
-																<div class="input-group">
-																		<!-- 
-																		<span class="input-group-addon">
-																			<i class="material-icons">lock_outline</i>
-																		</span>
-																		-->
-																		<div class="form-group label-floating">
-																				{{ form.password.label(class="control-label") }}<br>
-																				{{ form.password(size=32, class="form-control") }}<br>
-																				{% for error in form.password.errors %}
-																				<span style="color: red;">[{{ error }}]</span>
-																				{% endfor %}
-																			</div>
-																</div>
-										
-																<div class="checkbox">
-																	<label>
-																			{{ form.remember_me() }} {{ form.remember_me.label }} 
-																		
-																	</label>
-																</div> 
-															</div>
-															<div class="footer text-center">
-																{{ form.submit(class="btn btn-primary btn-simple btn-wd btn-lg") }} <!-- Get Started -->
-															</div>
-														</form>
-														<p>
-															{{ _('New User?') }} <a href="{{ url_for('auth.register') }}">{{ _('Click to Register!') }}</a>
-														</p>
-														<p>{{ _('Forgot Your Password?') }}
-															<a href="{{ url_for('auth.reset_password_request') }}">{{ _('Click to Reset It') }}</a>
-														</p>
-												
-							</div>
-						
-					</div>
-					<div class="modal-footer text-center">
-						...
+	{% endblock %}
+
+
+
+	<!-- Start Blue lady Watching over Paris street -->
+	<div class="page-queharashoy">
+		<div class="block-a color-white" navbar-theme="blue-white">
+			<div class="container middle height100">
+				<div class="box">
+					<span class="img">
+
+						<img class="scene-label"
+							src="{{ url_for('static', filename = 'img/app/lang/es/layout/home/b_qhh.png') }}" />
+					</span>
+					<div class="text">
+						<div class="h1">With optimism <br> and joy</div>
+						<div class="h22 helveticaneue-condensedbold">
+							Here at Blue Moon, we are eager to share our vision with your little one, a vision that
+							comes down to a simple question: What are we going to do today?
+							<!-- Una mañana de relajación contemplando la ciudad desde el balcón de casa, una sobremesa entre amigos con una guitarra de por medio, una tarde de cine en pareja o incluso un intenso día de trabajo. Qué más da lo que quieras hacer si lo único que importa es que puedas hacerlo. -->
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- End Blue lady Watching over Paris street -->
+
+
+	<div class="page-home" style="background-image: url('img/bg7home.jpg'); background-position: top center;">
+		<div class="block-a" navbar-theme="blue">
+			<ul id="scene">
+				<li class="layer" data-depth="0.50">
+					<div class="container">
+						<div class="scene-salmon"></div>
+				</li>
+				<li class="layer" data-depth="0.30">
+					<div class="container"><img class="scene-ingredients2"
+							src="{{ url_for('static', filename = 'img/app/layout/home/a_ingredients2.png') }}" /></div>
+				</li>
+				<li class="layer" data-depth="0.25">
+					<div class="container"><img class="scene-label"
+							src="{{ url_for('static', filename = 'img/app/layout/home/a_label.png') }}" /></div>
+				</li>
+				<li class="layer" data-depth="0.40">
+					<div class="container"><img class="scene-ingredients3"
+							src="{{ url_for('static', filename = 'img/app/layout/home/a_ingredients3.png') }}" /></div>
+				</li>
+				<li class="layer" data-depth="0.20">
+					<div class="scene-ingredients"></div>
+				</li>
+			</ul>
+			<div class="container title">
+				<span class="title text"> LET'S HAVE FUN, <br />WHILE LEARNING, <br class='hidden-xs' /> IN A SAFE
+					ENVIRONMENT <br class='visible-xs' /> &nbsp; <br class='hidden-xs' /><span
+						class='decoration'>&nbsp;</span>
+					&nbsp;</span>
+				<a href="#bluemoonuganda">
+					<i class="fa fa-2x fa-angle-double-down visible-xs" aria-hidden="true"></i>
+				</a>
+
+			</div>
+
+
+
+
+		</div> <!-- End Div class block-a-->
+
+
+		<div class="block-e">
+
+			<div class="block-e1">
+
+				<img class="book visible-xs"
+					src="{{ url_for('static', filename = 'img/app/layout/home/e_1_book.png') }}" alt="bluemoonkampala">
+				<div>
+					<span class="title">ONCE IN A , <br>BLUE MOON!</span>
+					<div>
+						<span class="text" style="color:white">Our new research-based curriculum (International Early
+							Years Curriculum ~ IEYC) recognizes global best practice in early childhood education and
+							the developmental needs of 2 - 5 year olds while at the same time giving you the perfect
+							opportunity to maintain WORK LIFE BALANCE despite uncountable daily pressures. </span>
+					</div>
+				</div>
+			</div>
+
+			<div class="block-e2">
+				<div class="block-e21" navbar-theme="white">
+					<div>
+						<div class="title">
+							<div><span> ¿WHAT IS MORE</span></div>
+							<span> PRECIOUS TO YOU RIGHT NOW?</span>
+						</div>
+						<span class="subtitle"> There is nothing more precious than the freedom to dedicate our time to
+							what we love, knowing that the little ones that we value the most are in a safe environment,
+							learning and having fun. It’s a perfect opportunity to maintain WORK LIFE BALANCE despite
+							uncountable daily pressures.</span>
+						<div class="qhh">
+							<!-- <img src="{{ url_for('static', filename = 'img/brand_white_total.png') }}"
+								alt="bluemoonkampala"> -->Do you remember that time when you had to go for a meeting, an
+							appointment, an event – "Stuff adults do!" and you could not go with your little one but you
+							love them so much, you needed to know that, while you were away, they were safe, happy and
+							at the same time learning something new. Now that, is what Bluemoon is all about!</div>
+
+					</div>
+				</div>
+
+				<div class="block-e22">
+					<div>
+
+						<!-- Start Form -->
+						<div class="" style="padding-right: 12px;">
+
+							<form action="" method="post">
+								{{ form.hidden_tag() }}
+
+								{% with messages = get_flashed_messages() %}
+								{% if messages %}
+								{% for message in messages %}
+								<div class="alert alert-info" role="alert">{{ message }}</div>
+								{% endfor %}
+								{% endif %}
+								{% endwith %}
+
+
+
+								<div class="">
+
+									<div class="">
+										<!-- 
+																		<span class="input-group-addon">
+																			<i class="material-icons">face</i>
+																		</span>
+																		-->
+										<div class="">
+											{{ form.username.label(class="control-label") }}<br>
+											<span style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+												{{ form.username(size=32, class="form-control") }}</span><br>
+											{% for error in form.username.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+											{% endfor %}
+										</div>
+									</div>
+
+									<div class="">
+										<!-- 
+																		<span class="input-group-addon">
+																			<i class="material-icons">lock_outline</i>
+																		</span>
+																		-->
+										<div class="">
+											{{ form.password.label(class="control-label") }}<br>
+											{{ form.password(size=32, class="form-control") }}<br>
+											{% for error in form.password.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+											{% endfor %}
+										</div>
+									</div>
+
+									<div class="">
+										<label>
+											{{ form.remember_me() }} {{ form.remember_me.label }}
+
+										</label>
+									</div>
+								</div>
+								<div class="">
+									{{ form.submit(class="btn btn-primary btn-simple btn-wd btn-lg") }}
+									<!-- Get Started -->
+								</div>
+							</form>
+							<p>
+								{{ _('New User?') }} <a
+									href="{{ url_for('auth.register') }}">{{ _('Click to Register!') }}</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+								{{ _('Forgot Your Password?') }}
+								<a href="{{ url_for('auth.reset_password_request') }}">{{ _('Click to Reset It') }}</a>
+							</p>
+
+
+						</div>
+						<!-- End Form-->
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+		<div class="cd-section" id="features">
+
+
+			{% block content %}{% endblock %}
+
+
+		</div>
+	</div>
+
+
+
+
+
+	<footer class="footer">
+		<div class="container">
+			<div class="block-a">
+				<ul class="nav navbar-nav nav-primary">
+
+					<li class="active"><a href="index.html">Home</a></li>
+					<li class=""><a href="queharashoy.html">What you gonna do today?</a></li>
+					<li class=""><a href="cocinoonococino.html">Cooking or not?</a></li>
+					<li class=""><a href="scanfisk.html">Scanfisk</a></li>
+					<li class=""><a href="contacto.html">Contact</a></li>
+				</ul>
+
+			</div>
+			<div class="block-b">
+				<div class="navbar-text">
+
+					<span class="social">
+						<a href="https://www.facebook.com/MrFiskEspana"><i class="fa fa-facebook fa-2x"></i></a>
+						<a href="https://twitter.com/MrFiskEspana"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="https://www.instagram.com/MrFiskEspana"><i class="fa fa-instagram fa-2x"></i></a>
+						<a href="#"><i class="fa fa-youtube-play fa-2x"></i></a>
+					</span>
+					<!-- <span class="bmo"><a href="http://codetales.com" target="_white">Powered by ABE</a></span>-->
+				</div>
+				<a class="navbar-brand" href="index.html">
+
+					<img class="brand" src="{{ url_for('static', filename = 'hop_files/brand_white_total.png') }}" />
+				</a>
+			</div>
+	</footer>
+
+
+
+	<!-- -->
+
+
+	<!-- Classic Modal -->
+	<div class="modal fade" id="mycontactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content  ">
+				<div class="modal-header color-blue center">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						<i class="material-icons">close</i>
+					</button>
+					<!-- 
+					<h4 class="modal-title" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><strong>Going
+							already?</strong>
+					</h4> -->
+				</div>
+				<div class="modal-body block-a color-blue center">
+					<p>
+						<div class="">
+							<div class="" navbar-theme="blue">
+								<div class="">
+									<div class="box wave-blue-total-center">
+										<div class="h82">Going already?</div>
+										<div class="h22 helveticaneue-condensedbold">Well done! Go and live out your
+											plans! But remember: wherever you go, whatever you do, you can visit us at
+											the address below.<br>Until next time!</div>
+										<!-- 
+										<img class="qhh" src="{{ url_for('static', filename = 'img/P1970845.jpg') }}"
+											alt="bluemoonkampala"> -->
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</p>
+				</div>
+				<div class="modal-body block-b bg-blue color-white center">
+					<p>
+						<div class="" style="background-image: url_for('static', filename='img/442618small.jpg');">
+
+							<div class="block-b bg-blue color-white center" navbar-theme="blue-white">
+								<div class="">
+									<div class="box wave-white-total-center">
+										<div class="h1">WHERE CAN YOU FIND US?</div>
+										<div class="h22 helveticaneue-condensedbold">Kawagga Close, Muyenga<br>Kampala -
+											Uganda
+											- <br>Open Mon - Fri: 7.30am -
+											6.00pm<br>+256 0787 673 038</div>
+										<div class="h22 helveticaneue-condensedbold">
+											admin@bluemooninternationalschool.com</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</p>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Ciao!</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!--  End Modal -->
-<!-- -->
-    	<!-- notice modal -->
-		<div class="modal fade" id="noticegameplanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-notice" >
-			  <div class="modal-content" style="background-image: url({{ url_for('static', filename='img/442618small.jpg') }})">
+
+
+	<!-- notice modal -->
+	<div class="modal fade" id="noticeprimaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-notice">
+			<div class="modal-content" style="background-image: url_for('static', filename='img/442618small.jpg') ">
 				<div class="modal-header">
-				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
-				  <h5 class="modal-title" id="myModalLabel">Game Plan</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+							class="material-icons">clear</i></button>
+					<h5 class="modal-title" style="font-family: Verdana, Geneva, Tahoma, sans-serif;" id="myModalLabel">
+						<strong>PRIMARY</strong></h5>
 				</div>
 				<div class="modal-body">
-				  <div class="instruction">
-					  <div class="row">
-						  <div class="col-md-8">
-							   <strong>Walk: Create</strong>
-							   <p>Run an awareness campaign, Establish a tone and appearance, Develop creative content, Establish online audiences & communities</p>
-						  </div>
-						  <div class="col-md-4">
-							  <div class="picture">
-									<img class="img-rounded img-responsive" src="{{ url_for('static', filename = 'img/dg1.jpg') }}" alt="bluemoonAPP" >
-								  
-							  </div>
-						  </div>
-					  </div>
-				  </div>
-				  <div class="instruction">
-					  <div class="row">
-						  <div class="col-md-8">
-								  <strong>Jog: Engage</strong>
-								  <p>Position the Blue Moon brand, Build credibility & state authority, Engage communities, Create content</p>
-						  </div>
-						  <div class="col-md-4">
-							  <div class="picture">
-								  <img class="img-rounded img-responsive" src="{{ url_for('static', filename = 'img/dg2.jpg') }}" alt="bluemoonAPP" >
-								  
-							  </div>
-						  </div>
-					  </div>
-				  </div>
-				  <strong>Run: Activate</strong>
-				  <p>Engage the audience, Roll out creative campaigns, Online activations, Create content</p>
+					<div class="instruction">
+						<div class="row">
+							<div class="col-md-8" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+								<strong>SUNBEAMS: IPC is taught using Thematic Units…</strong>
+								<p>
+									<br><strong>The learning process</strong>
+									<br>
+									Every curriculum unit follows a distinct learning process. This provides a
+									structured approach to the way children learn ensuring that their learning is
+									stimulating, purposeful and rigorous.
+									<br>
+									<img src="{{ url_for('static', filename = 'img/ipc66d8b.jpg') }}"
+										alt="bluemoonkampala">
+									<br>
+									<strong>ENTRY POINT</strong>
+									<br>
+									An exciting, memorable event launches every unit. The aim of the entry point is to
+									get children excited about and engaged with the learning that’s to follow. This
+									provides teachers with the chance to find out what children already know about the
+									theme and helps them to personalise the unit by finding out what children want to
+									learn and then tailoring their lessons accordingly. It reinforces connections
+									between learning and allows children to take ownership of their learning.
+									<br>
+									<br><strong>Knowledge Harvest</strong>
+									<br>
+									This provides teachers, children and parents with the big picture of the unit before
+									it is launched so that connections between existing and future learning can be made.
+									<br><br>
+									<img src="{{ url_for('static', filename = 'img/ipc7a0c7.jpg') }}"
+										alt="bluemoonkampala">
+
+									<br>
+
+								</p>
+							</div>
+							<div class="col-md-4">
+								<div class="picture">
+									<img class="img-rounded img-responsive"
+										src="{{ url_for('static', filename = 'img/ipc4-e15688892956826107.jpg') }}"
+										alt="bluemoonAPP">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<P>&nbsp;</P>
+					<div class="instruction">
+						<div class="row">
+							<div class="col-md-8" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+								<strong>Research Activities</strong>
+								<p> <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+
+										Each subject area has planned research activities which are designed to make
+										sure that children can access information in a way that is appropriate to them,
+										drawing on a wide range of learning approaches such as role play, digital
+										learning, library research and so on. Research activities are experiential and
+										exploratory. Some are collaborative and others are designed to develop
+										individual inquiry and resilience.<br>
+										<br>
+										<strong>Recording Activities</strong>
+										<br>
+										The recording activities enable children to process and present the information
+										they have gained in their research activities through a range of approaches
+										which tap
+										into their different strengths and interests, enabling them to get better at
+										other ways of recording. This might involve learning through digital recording,
+										drama,
+										musical compositions, maps, graphs, experiments, art work and so on.
+
+
+										<br></span></p>
+							</div>
+							<div class="col-md-4">
+								<div class="picture">
+									<img class="img-rounded img-responsive"
+										src="{{ url_for('static', filename = 'img/ipc5-e15688893826857556.jpg') }}"
+										alt="bluemoonAPP">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<strong><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><br>EXIT
+							POINT</span></strong>
+					<p><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+							The exit point completes every unit. It helps children to draw on their learning
+							from the unit, reminding them of all the connections between subjects that they
+							have made, and creating time and opportunity to build their understanding of their
+							learning
+
+						</span>
+
+
+					</p>
 				</div>
 				<div class="modal-footer text-center">
-					  <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Sounds good!</button>
+					<button type="button" class="btn btn-info btn-round" data-dismiss="modal">Ok!</button>
 				</div>
-			  </div>
 			</div>
-		  </div>
-		  <!-- end notice modal -->    
-<!-- -->
-	</body>
-	<script type="text/javascript" src="{{ url_for('static', filename = 'js/home/script.js') }}"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename = 'js/parallax.js') }}"></script>
-
-	<script type="text/javascript" src="{{ url_for('static', filename = 'js/vertical-nav.js') }}"></script>
-	
-
-	<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/material.min.js') }}"></script>
+		</div>
+	</div>
+	<!-- end notice modal -->
 
 
-    <!--    Plugin for Date Time Picker and Full Calendar Plugin   -->
-    <script src="{{ url_for('static', filename = 'js/moment.min.js') }}"></script>
-	
 
-	<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/   -->
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/nouislider.min.js') }}"></script>
-    
+	<!-- notice modal -->
+	<div class="modal fade" id="noticegameplanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-notice">
+			<div class="modal-content"
+				style="background-image: url({{ url_for('static', filename='img/442618small.jpg') }})">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+							class="material-icons">clear</i></button>
+					<h5 class="modal-title" style="font-family: Verdana, Geneva, Tahoma, sans-serif;" id="myModalLabel">
+						<strong>FEES</strong></h5>
+				</div>
+				<div class="modal-body">
+					<div class="instruction">
+						<div class="row">
+							<div class="col-md-8" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+								<strong>Tuition: Fees (2019 - 2020)</strong>
+								<p> The School is dependent on a regular cash‐flow to enable it to cover its costs. We
+									therefore appeal to parents to ensure that the payment of school fees is a priority
+									and that they are always paid on time. If for any reason your child attends Blue
+									moon International School for only part of the term, you will still be liable for
+									the full term’s fee based on the termly rate. Cash payments and deposits are
+									encouraged. If paying cash, please insist on a receipt at the time of payment.
+									<br>
+									Bluemoon International School charges full term tuition fees. However, parents are
+									welcome to make payment for the full year academic school fees. New students
+									enrolled before mid-semester will pay the full semester fee. Those who enrol on or
+									after mid-semester will pay the half semester fee (i.e. 50% of one full semester
+									fee).
+									<br>
+									Part time children will be required to book in advance and pay the amount of weeks
+									booked in full. Please note that fees MUST be paid regardless of sickness or
+									absenteeism.
+									<br><br>
+									<strong>Sibling Discount</strong>
+									<br>
+									Sibling Discount of 30% will be deducted from the termly fee for 1 younger sibling
+									(irrespective of enrolment date) and 20% for the 3rd sibling enrolled.
+									<br>
 
-	<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker   -->
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap-datetimepicker.js') }}"></script>
-    
+								</p>
+							</div>
+							<div class="col-md-4">
+								<div class="picture">
+									<img class="img-rounded img-responsive"
+										src="{{ url_for('static', filename = 'img/dg1.jpg') }}" alt="bluemoonAPP">
 
-	<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select   -->
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap-selectpicker.js') }}"></script>
-    
+								</div>
+							</div>
+						</div>
+					</div>
+					<P>&nbsp;</P>
+					<div class="instruction">
+						<div class="row">
+							<div class="col-md-8" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+								<strong>Primary Class Fees (2020)</strong>
+								<p> <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 
-	<!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/   -->
-    <script src="{{ url_for('static', filename = 'js/bootstrap-tagsinput.js') }}"></script>
-    
+										<br>We offer a 30% discount if the annual fee is paid in full by 31st January
+										2020, 20% if paid by 1st March 2020 and 10% if paid by 1st June 2020.
+										<br>
+										Mile stone 1 (Year 1 & Year 2) = <strong>Registration $125 (once off) + Termly
+											Tuition $950 per term + Lunch $ 70 per term</strong><br><br>
 
-	<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput   -->
-    <script src="{{ url_for('static', filename = 'js/jasny-bootstrap.min.js') }}"></script>
-    
+										<strong>Payment of fees</strong>
+										<br>
+										All fees are due and payable in USD or UGX by the due date as stated in the
+										Student Contract and are subject to the prevailing rate. BluemoonInternational
+										School
+										accepts fee payments in cash, cheque, Electronic bank transfer and bank deposit.
+										<br>
+										Cash payments must be made in person at the account at Bluemoon International
+										School during office hours between 8.00am and 5.00pm from Monday to Friday.
+										<br>
+										Payments made by cheque must be in the form of a crossed cheque made payable to
+										“Bluemoon International School and with the child’s name and year group written
+										on
+										the back. Please do not submit post dated cheques.
+										<br>
+										Please ensure that the child’s name, class and student number are referenced on
+										the remittance to enable us to credit the amount received to your child’s
+										account
+										accordingly. All bank charges are to be borne by the remitter. Please forward a
+										copy of the transaction receipt.
+										<br></span></p>
+							</div>
+							<div class="col-md-4">
+								<div class="picture">
+									<img class="img-rounded img-responsive"
+										src="{{ url_for('static', filename = 'img/dg2.jpg') }}" alt="bluemoonAPP">
 
-	<!--    Plugin For Google Maps   -->
-    <!-- <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
-    
+								</div>
+							</div>
+						</div>
+					</div>
+					<strong><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><br>Fees Paid by
+							Company</span></strong>
+					<p><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+							If school fees are paid by a company / employer, please complete the Company
+							Payment Form and submit to Student Services to guarantee payment before the start of
+							classes.
+							<br>
+							Fee payments not made within fourteen (14) days of the due date will be
+							subjected to a late payment fee of 5% of outstanding fees. Students may be suspended if the
+							payment remains outstanding. Any outstanding payment remains upon withdrawal
+							from BluemoonInternational School; no transcripts, transfers or other records will be
+							released until full payment, including late payment fee, is received.</span>
 
-	<!--    Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc    -->
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/material-kit.js') }}" ver="1.2.1"></script>
-	
+					</p>
+				</div>
+				<div class="modal-footer text-center">
+					<button type="button" class="btn btn-info btn-round" data-dismiss="modal">Fees once paid, are
+						unrefundable!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end notice modal -->
+
+	<!-- notice modal -->
+	<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-notice">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+							class="material-icons">clear</i></button>
+					<h5 class="modal-title" id="myModalLabel"><span style=" color: #ffffff;">Blue Moon ~ Calendar</span>
+					</h5>
+				</div>
+				<div class="modal-body">
+					<div class="instruction">
+						<div class="row">
+							<div class="col-md-12">
+
+
+
+								<!-- partial:index.partial.html -->
+								<div id="calendar"></div>
+
+
+
+
+
+								<!-- End main & inches to cm convert caculator-->
+
+							</div>
+							<!-- 
+						  <div class="col-md-4">
+							  <div class="picture">
+								  <img src="../static/img/dg1.png" alt="Thumbnail Image"  class="img-rounded img-responsive">
+							  </div>
+						  </div> -->
+						</div>
+					</div>
+					<div class="instruction">
+						<div class="row">
+							<div class="col-md-12">
+								<h5 class="modal-title" id="myModalLabel"><span style=" color: #ffffff;">Result</span>
+								</h5>
+								<!--result display               author: Tangqi Feng -->
+								...
+							</div>
+							<!-- 
+						  <div class="col-md-4">
+							  <div class="picture">
+								  <img src="../static/img/dg2.jpg" alt="Thumbnail Image"  class="img-rounded img-responsive">
+							  </div>
+						  </div> -->
+						</div>
+					</div>
+				</div>
+				<!-- 
+				<div class="modal-footer text-center">
+					  <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Sounds good!</button>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<!-- end notice modal -->
+
+
+
+
+	<!-- Classic Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						<i class="material-icons">close</i>
+					</button>
+					<h4 class="modal-title" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+						<strong>Vacancy</strong></h4>
+				</div>
+				<div class="modal-body" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+					<p><strong>Position: <u>Primary School IPC teacher</u></strong>
+						<br>
+						<br>Commencement date: To be communicated (between <strong>May-July 2020</strong>)
+
+						<br>● The Primary School IPC Teacher provides high quality education to the Primary pupils based
+						on the Bluemoon philosophy and ethos.
+
+						<br>● The Primary School IPC Teacher must support each individual pupil’s growth and
+						development, encouraging them to be inspired, intellectual, independent, individual and
+						inclusive.
+
+						<br>● The IPC teacher must demonstrate an understanding of the wider curriculum and
+						administration needs of the school, and achieve high standards by responding professionally,
+						sensitively
+						and caringly to the needs of the pupils.
+						<br>
+						<br><strong>The teacher will:</strong>
+						<br>• teach a class of 12 pupils, and ensure that planning, preparation, recording, assessment
+						and reporting meet their varying learning and social needs;
+						<br>• maintain the positive ethos and core values of the school, both inside and outside the
+						classroom;
+						<br>• contribute to constructive team-building amongst teaching and non-teaching staff, parents
+						and directors;
+						<br>• manage, monitor and direct staff as appropriate.
+						<br><br><strong>KEY RESPONSIBILITIES:</strong>
+						<br>● The successful candidate will play a key role in the development of IPC curriculum at
+						Bluemoon International School. We are looking for a candidate who would relish the challenge of
+						establishing the subject in a new school.
+
+						<br>● The IPC teacher will have the responsibility for the planning and teaching of the subjects
+						to the designated class. The teacher will ensure that the subject is delivered in a way that
+						provides coverage, progression and continuity.
+
+						<br>● The teacher will also be required to carry out other such duties as the Head of Primary
+						may reasonably direct from time to time.
+						<br>● He/she is expected to display the highest standards of professionalism in his/her teaching
+						and in his/her relationships with colleagues and parents.
+						<br>● The teacher must ensure that an excellent learning environment is provided for the
+						learning of IPC, and that the students develop a positive attitude to the subject within the
+						school.
+						<br>● The teacher must present lessons in a structured and co-ordinated manner with due regard
+						to the ability of the students and the curriculum targets of the particular year group.
+						<br>
+						<br><strong>The teacher will:</strong>
+
+						<br>Implement agreed school policies and guidelines;
+						<br>Support initiatives decided by the Headteacher and staff;
+						<br>Plan appropriately to meet the needs of all pupils, through differentiation of tasks;
+						<br>Be able to set clear targets, based on prior attainment, for pupils’ learning;
+						<br>Provide stimulating learning environments, where resources can be accessed appropriately by
+						all pupils;
+						<br>Keep appropriate and efficient records, integrating formative and summative assessment into
+						weekly and termly planning;
+						<br>Report to parents on the development, progress and attainment of pupils;
+						<br>Maintain good order and discipline amongst pupils, in accordance with the school’s behaviour
+						policy;
+						<br>Participate in meetings which relate to the school’s management, curriculum, administration
+						or organisation;
+						<br>Communicate and co-operate with specialists from outside agencies;
+						<br>Read, organise and direct support staff within the classroom
+						<br>Undertake all reasonable duties when requested by the Senior Leadership Team:
+						<br>Act as a point of contact for one ‘home’ class. Undertaking the normal pastoral duties this
+						entails.
+						<br>
+						<br><strong>Home-School communication</strong>
+						<br>1. Make parents feel welcome and build good relationship with parents.
+						<br>2. Introduce information regarding to Primary School IPC curriculum.
+
+						<br>3. Collect information of pupils’ interests and growth from parents.
+						<br>4. Stimulate pupils’ study by making use of parents’ strengths.
+						<br>5. Provide consultations and support to parents’ enquiries.
+						<br>6. Communicate with parents on a regular basis, as directed by the Head of Primary.
+						<br>7. Attend Parents’ Meetings as required and provide accurate, honest information regarding
+						the progress of individuals in IPC.
+						<br>8. Report to the parents in the form of regular written reports, and when additionally
+						required
+						by the Head of Primary.
+						<br><br><strong>Professional Integrity</strong>
+						<br>1. Be positive and build good relationship with colleagues.
+						<br>2. Complete tasks on time.
+						<br>3. Provide cover for absent colleagues as and when deemed necessary by the Head of Primary.
+						<br>4. Play a full role in the weekly extra-curricular activities programme. The programme will
+						take
+						place outside of the prescribed teaching hours, as directed by the Head of
+						the Primary.
+						<br>5. Make a significant contribution to assemblies, and newsletters, and by so
+						doing highlight the work carried out by students in the subject.
+						<br>6. Promote an ethos of equality and equal opportunities for all pupils within the setting.
+						<br>7. Protect privacy of pupils, pupils’ families and colleagues.
+						<br>8. Maintain the highest standards of care, child protection and safeguarding at all times
+						<br>9. Emphasize the importance of safety and of safe methods of working in the classroom, and
+						indeed in all areas of the College and the curriculum. Communicate to the
+						students that they must take a responsible attitude to equipment and materials, with which they
+						have been provided, and that they will be punished and possibly charged
+						for damage inflicted upon College property.
+						<br>10. Carry out duties in the Primary School as required and timetabled by the Head of
+						Primary. This will include playtime supervision, lunchtime supervision and afterschool
+						supervision.
+
+						<br>11. Maintain, with the rest of the teaching staff, high standards of conduct both in and out
+						of
+						the classroom. Act always in a way that conforms to the school ethos and
+						values, and is in the best interests of the students.
+						<br>12. Set high expectations and standards for the achievement of pupils and your personal
+						performance.
+						<br>13. Contribute as fully as possible to the annual calendar of school events, in whatever way
+						possible.
+						<br><br><strong>Professional Development</strong>
+						<br>1. Be familiar with the recent development of Primary School IPC teaching theory and
+						practice.
+						<br>2. Improve yourself through continuous study and be willing to try new ideas.
+						<br>3. Be willing to accept others’ good ideas and share your opinions.
+						<br>. Frequently reflect on your work and share your experience with other colleagues.
+						<br>5. Support the school Development Plan generally and in so far as it relates to IPC.
+						<br>6. Attend staff meetings and briefings as and when required by the Head of Primary
+
+						<br><br>Please submit CV and cover letter, with an application letter in English and
+						email to
+						<br><strong>director@bluemooninternationalschool.com</strong>
+					</p>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--  End Modal -->
+
+	<!-- Register Modal -->
+	<div class="modal fade" id="signuppreschoolModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-signup">
+			<div class="modal-content">
+				<div class="card card-signup card-plain">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+								class="material-icons">clear</i></button>
+						<h2 class="modal-title card-title text-center" id="myModalLabel">Register</h2>
+					</div>
+					<!--
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-5 col-md-offset-1">
+								<div class="info info-horizontal">
+									<div class="icon icon-rose">
+										<i class="material-icons">timeline</i>
+									</div>
+									<div class="description">
+										<h4 class="info-title">Marketing</h4>
+										<p class="description">
+											We've created the marketing campaign of the website. It was a very
+											interesting collaboration.
+										</p>
+									</div>
+								</div>
+
+								<div class="info info-horizontal">
+									<div class="icon icon-primary">
+										<i class="material-icons">code</i>
+									</div>
+									<div class="description">
+										<h4 class="info-title">Fully Coded in HTML5</h4>
+										<p class="description">
+											We've developed the website with HTML5 and CSS3. The client has access to
+											the code using GitHub.
+										</p>
+									</div>
+								</div>
+
+								<div class="info info-horizontal">
+									<div class="icon icon-info">
+										<i class="material-icons">group</i>
+									</div>
+									<div class="description">
+										<h4 class="info-title">Built Audience</h4>
+										<p class="description">
+											There is also a Fully Customizable CMS Admin Dashboard for this product.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-5">
+								<div class="social text-center">
+									<button class="btn btn-just-icon btn-round btn-twitter">
+										<i class="fa fa-twitter"></i>
+									</button>
+									<button class="btn btn-just-icon btn-round btn-dribbble">
+										<i class="fa fa-dribbble"></i>
+									</button>
+									<button class="btn btn-just-icon btn-round btn-facebook">
+										<i class="fa fa-facebook"> </i>
+									</button>
+									<h4> or be classical </h4>
+								</div>
+
+								<form class="form" method="" action="">
+									<div class="card-content">
+										<div class="input-group">
+											<span class="input-group-addon">
+												<i class="material-icons">face</i>
+											</span>
+											<input type="text" class="form-control" placeholder="First Name...">
+										</div>
+
+										<div class="input-group">
+											<span class="input-group-addon">
+												<i class="material-icons">email</i>
+											</span>
+											<input type="text" class="form-control" placeholder="Email...">
+										</div>
+
+										<div class="input-group">
+											<span class="input-group-addon">
+												<i class="material-icons">lock_outline</i>
+											</span>
+											<input type="password" placeholder="Password..." class="form-control" />
+										</div>
+
+										<!-- If you want to add a checkbox to this form, uncomment this code -->
+
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="optionsCheckboxes" checked>
+							I agree to the <a href="#something">terms and conditions</a>.
+						</label>
+					</div>
+				</div>
+				<div class="modal-footer text-center">
+					<a href="#pablo" class="btn btn-primary btn-round">Get Started</a>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div> -->
+	</div>
+	</div>
+	</div>
+	</div>
+	<!--  End Modal -->
+
+
+	<!-- Scripts -->
+	<script src="{{ url_for('static', filename = 'hop_files/scripvbt.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'hop_files/js') }}"></script>
+	<script src="{{ url_for('static', filename = 'hop_files/script_002.js') }}"></script>
+
+
+	<!-- Calendar Scripts JS and CSS -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
+	<script src="{{url_for('static', filename='js/cdnjs/cloudflare/ajax/libs/moment/2.5.1/moment.min.js')}}"></script>
+
+
+	<!-- partial -->
+	<script src="{{url_for('static', filename='js/calendarscript.js')}}"></script>
+
+
+</body>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/home/script.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/parallax.js') }}"></script>
+
+
+
+
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/material.min.js') }}"></script>
+
+
 
 </html>

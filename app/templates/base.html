@@ -16,17 +16,21 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/userinfocardstyle.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/purecss/style.css') }}">
 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calendarstyle.css') }}">
+
 
 
         <!-- <style> body {background-color: #ffe72c} </style> -->
         <script src="{{url_for('static', filename='js/main_part.js')}}"></script>
         <script src="{{url_for('static', filename='js/convert.js')}}"></script>
         <script src="{{url_for('static', filename='js/bootstraptablesearch/index.js')}}"></script>
+
+        
     
 {% endblock %}
 
 {% block title %}
-    {% if title %}{{ title }} ~blueMOONAPP{% else %}{{ _('Welcome to ~blueMOONAPP') }}{% endif %}
+    {% if title %}{{ title }} ~ BLUEMOON Kampala{% else %}{{ _('Welcome to BLUEMOON') }}{% endif %}
 {% endblock %}
 
 
@@ -70,13 +74,13 @@
                     <li>
                         <button class="btn btn-info btn-raised btn-fab btn-fab-mini" data-toggle="modal" data-target="#myModal">
                             <!-- <i class="material-icons">library_books</i> -->
-                            Converters
+                            Other
                         </button>
                     </li>
                    <li>
                         <button class="btn btn-rose btn-raised btn-fab btn-fab-mini" data-toggle="modal" data-target="#noticeModal">
                             <!-- <i class="material-icons">notifications</i> -->
-                            BMI
+                            Calendar
                         </button>
                    </li>
 
@@ -152,12 +156,12 @@
                 <ul class="pull-center">
                     <li class="footer-grey">
                         &nbsp;&nbsp;<img class="" src="{{ url_for('static', filename = 'img/tap.png') }}" alt="bluemoonAPP" >
-                    </li>
+                    </li><!-- 
                     <li>
                         <a href="#">
                             @bmk | #bmk | bmk
-                        </a>
-                    </li>
+                        </a> 
+                    </li> -->
                     <li>
                         <img class="" src="{{ url_for('static', filename = 'img/brand_white_total.png') }}" alt="bluemoonAPP" > &nbsp;&nbsp;
                     </li>
@@ -166,7 +170,7 @@
                 
                 <ul class="social-buttons pull-right">
                     
-                        <a class="footer-brand" href="http://www.cypher.io">~bluemoonAPP//</a>
+                        <a class="footer-brand" href="#">~bluemoonAPP//</a>
     
                     
                     <!--
@@ -254,74 +258,7 @@
                                 weight in relation to your height, and applies to most adult
                                  men and women aged 20 and over. For children aged 2and over
                                  , BMI percentile is the best assessment of body fat. -->
-                                <table>
-                                    <tr>
-                                        
-    
-                                        <div class="col-md-3 ">
-                                            <div class="form-group label-floating has-success">
-                                                <label class="control-label">feet</label>
-                                                <input type="text" id=height_feet class="form-control text-whyte">
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-md-3 ">
-                                            <div class="form-group label-floating has-success">
-                                                <label class="control-label">inches</label>
-                                                <input type="text" id=height_inches class="form-control text-whyte">
-                                            </div>
-                                        </div>
-    
-    
-                                        <div class="col-md-3 ">
-                                            <div class="form-group has has-success">
-                                                <label class="control-label">cm</label>
-                                                <input type="text" id=centimeter class="form-control text-whyte">&nbsp; cm
-                                            </div>
-                                        </div>
-    
-                                        <!-- 
-                                        <input type="text" size="1" maxlength="3" id="height_feet" style="margin-left:0px;margin-top:28px;">feet
-                                        <input type="text" size="1" maxlength="3" id="height_inches" style="margin-left:0px;">inches
-                                        <b>=</b>
-                                        <input type="text" size="3" maxlength="4" id="centimeter" style="margin-left:0px;">cm -->
-                                    </tr>
-                                    <br>
-                                    <button type="button" class="btn btn-info btn-xs" onclick="one()">Convert</button>
-                                    <button type="button" class="btn btn-info btn-xs" onclick="clear1()">Reset</button>
-                                    <br />
-                                    <br />
-                                    <br />
-                
-                                </table>
-                                <table>
-                                    <tr>
-                                        <div class="col-md-3 ">
-                                            <div class="form-group has has-success">
-                                                <label class="control-label">&nbsp;</label>
-                                                &nbsp; &nbsp;
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 ">
-                                            <div class="form-group label-floating has-success">
-                                                <label class="control-label">lb</label>
-                                                <input type="text" id=pound class="form-control text-whyte">
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-md-3 ">
-                                            <div class="form-group has-success">
-                                                <label class="control-label">kg</label>
-                                                <input type="text" id=kilogram class="form-control text-whyte">&nbsp; kg
-                                            </div>
-                                        </div>
-                                        
-                                    </tr>
-                                    <br>
-                                    <button type="button" class="btn btn-info btn-xs" onclick="two()">Convert</button>
-                                    <button type="button" class="btn btn-info btn-xs" onclick="clear2()">Reset</button>
-                
-                                </table>
+                                ...
                         </p>
                     </div>
                     <div class="modal-footer">
@@ -340,7 +277,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
-                <h5 class="modal-title" id="myModalLabel"><span style=" color: #ffffff;">Calculate BMI</span></h5>
+                <h5 class="modal-title" id="myModalLabel"><span style=" color: #ffffff;">Blue Moon ~ Calendar</span></h5>
               </div>
               <div class="modal-body">
                 <div class="instruction">
@@ -349,43 +286,8 @@
                              
     
     
-                             <div class="row clearfix" id="main&calculator">
-                                    <form name="form1">
-                                    <!--                 inputs -->
-                                    <div id="inputs">
-                                            
-                                            <div class="row">
-                                                <div class="col-md-3 ">
-                                                    <div class="form-group label-floating has-success">
-                                                        <label class="control-label">Height</label>
-                                                        <input type="text" name=height class="form-control text-whyte">
-                                                    </div>
-                                                </div>
-                        
-                                                <div class="col-md-3 ">
-                                                    <div class="form-group label-floating has-success">
-                                                        <label class="control-label">Weight</label>
-                                                        <input type="text" name=weight class="form-control text-whyte">
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-md-3 ">
-                                                    <select class="selectpicker" name=sex data-style="select-with-transition" title="" data-size="7">
-                                                        <option value="0" class="text-whyte" selected>Male</option>
-                                                        <option value="1"><span style="color: white;">Female</span></option>
-                                                    </select>
-                                                </div>
-    
-                                                <br>
-                                                <input class="btn btn-info btn-xs" onclick=lookme(this.form) type=button value=submit name=button style="margin-left:50px;">
-                                                <input class="btn btn-info btn-xs" onclick=ClearForm() type=reset value="  reset  " name=reset style="margin-left:30px;">
-                        
-    
-                                            </div>
-                                        </div>
-                            <!--                 end inputs -->
-                                    </form>    
-                                    </div>        
+                             <!-- partial:index.partial.html -->
+                                <div id="calendar"></div>       
     
     
     
@@ -407,37 +309,7 @@
                         <div class="col-md-12">
                                 <h5 class="modal-title" id="myModalLabel"><span style=" color: #ffffff;">Result</span></h5> 
                                 <!--result display               author: Tangqi Feng -->
-                                <div class="row clearfix" id="result">
-                                    <table class="col-md-12 column" >
-                                        <form name="form2">
-    
-                                                    <tr>
-                                                        <td class="control-label" >
-                                                            <span style=" color: #B2FF41">Ideal weight (kg)：</span>
-                                                            <input onfocus=blur() size=4 name="legendweight" style="border:0; color: #ffffff; background:none;">
-                                                            <span style=" color: #B2FF41">~</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="control-label">
-                                                            <span style=" color: #B2FF41; font-weight:400;">BMI (21-22 is the best)：</span>
-                                                            <input onfocus=blur() size=3 name="bmi" style="border:0; color: #ffffff; background:none;">&nbsp;&nbsp;&nbsp;
-                                                            <span style=" color: #B2FF41">~</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><P>&nbsp;</P></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="control-label" align=center colspan="2">
-                                                            <span style=" color: #ffffff;">~
-                                                            <textarea onfocus=blur() name=nowstat cols=40 style="border:0; color: #B2FF41; background:none;"></textarea></span>
-                                                        </td>
-                                                    </tr>
-    
-                                        </form>
-                                    </table>
-                                </div>
+                                ...
                         </div>
                         <!-- 
                         <div class="col-md-4">
@@ -569,6 +441,14 @@
         <!--  End Modal -->
 
 
+        <!-- Calendar Scripts JS and CSS -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
+        <script src="{{url_for('static', filename='js/cdnjs/cloudflare/ajax/libs/moment/2.5.1/moment.min.js')}}"></script>
+
+        
+        <!-- partial -->
+        <script src="{{url_for('static', filename='js/calendarscript.js')}}"></script>
 </body>
 {% endblock %}
 

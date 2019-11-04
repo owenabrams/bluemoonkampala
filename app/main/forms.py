@@ -88,12 +88,12 @@ class PostForm(FlaskForm):
     body = TextAreaField(_l('Nurse Notes'), validators=[DataRequired()])
     
     #CDC Nutritional Status
-    height = DecimalField('Height', validators=[DataRequired()] )
-    weight = DecimalField('Weight', validators=[DataRequired()] )
-    bmi = DecimalField('BMI', validators=[DataRequired()] )
-    muac = DecimalField('MUAC', validators=[DataRequired()] )
+    height = DecimalField('Height' )
+    weight = DecimalField('Weight' )
+    bmi = DecimalField('BMI' )
+    muac = DecimalField('MUAC')
 
-    submit = SubmitField(_l('Submit Nutritional Status'))
+    submit = SubmitField(_l('Submit'))
 
 
 class WaypointForm(FlaskForm):
